@@ -5,12 +5,12 @@ sed
 **-e** : sequence edit  
 **s|** : substitute delimiter can be any symbol / character (single byte)  
 **$** : for escaped 'single quote'  
-**\|pattern|** : (left one only) escaped line search delimiter other than '/'  
+**\|**pattern**|** : (left one only) escaped line search delimiter other than '/'  
 **a\** : append line  
 **i\** : insert(prepend) line  
 **d** : delete line  
-**\|1st pattern|,|last pattern|** : line range search  
-**...\** : escaped newline  
+**\|**1st pattern**|,|**last pattern**|** : line range search  
+...**\** : escaped newline  
 
 ```sh
 sed -i -e 's|<title>RuneAudio - RuneUI</title>|<title>RuneAudio - RuneUIe</title>|
