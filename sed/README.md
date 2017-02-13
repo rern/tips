@@ -7,6 +7,8 @@ sed
 **$** : for escaped 'single quote'  
 **\\|**pattern**|** : (left one only) escaped line search delimiter other than '/'  
 **\\|**1st pattern**|,|**last pattern**|** : line range search  
+**\.** : single character wildcard  
+\* : multiple character wildcard  
 **a\\** : append line  
 **i\\** : insert(prepend) line  
 **d** : delete line  
