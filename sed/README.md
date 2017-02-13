@@ -5,12 +5,12 @@ sed
 **-e** : sequence edit  
 **s|** : substitute delimiter can be any symbol / character (single byte)  
 **$** : for escaped 'single quote'  
-**\|**pattern**|** : (left one only) escaped line search delimiter other than '/'  
-**a\** : append line  
-**i\** : insert(prepend) line  
+**\\|**pattern**|** : (left one only) escaped line search delimiter other than '/'  
+**\\|**1st pattern**|,|**last pattern**|** : line range search  
+**a\\** : append line  
+**i\\** : insert(prepend) line  
 **d** : delete line  
-**\|**1st pattern**|,|**last pattern**|** : line range search  
-...**\** : escaped newline  
+...**\\** : escaped newline  
 
 **Example**
 ```sh
