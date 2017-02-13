@@ -4,7 +4,7 @@ sed
 **-i** : in-place edit input file  
 **-e** : sequence edit  
 **s|** : substitute delimiter can be any symbol / character (single byte)  
-**$** : for escaped 'single quote'  
+**$**' : for escaped 'single quote' in pattern  
 **\\|**pattern**|** : (left one only) escaped line search delimiter other than '/'  
 **\\|**1st pattern**|,|**last pattern**|** : line range search  
 **\.** : single character wildcard  
@@ -12,8 +12,8 @@ sed
 **a\\** : append line  
 **i\\** : insert(prepend) line  
 **d** : delete line  
-**^** : start  
-**$** : end  
+**^** : at start  
+**$** : at end  
 **^**... : start with ...  
 ...**$** : end with ...  
 ...**\\** : ... escaped newline  
