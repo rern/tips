@@ -12,7 +12,9 @@ sed
 **\|**1st pattern**|,|**last pattern**|** : line range search  
 ...**\** : escaped newline  
 
+**Example**
 ```sh
+### Edit ###
 sed -i -e 's|<title>RuneAudio - RuneUI</title>|<title>RuneAudio - RuneUIe</title>|
 ' -e $'\|runeui.css| a\
     <link rel="stylesheet" href="<?=$this->asset(\'/css/pnotify.css\')?>">\
@@ -43,6 +45,7 @@ sed -i -e 's|<title>RuneAudio - RuneUI</title>|<title>RuneAudio - RuneUIe</title
 ' -e 's|"fa fa-list"></i> Queue|"fa fa-list"></i>|
 ' /srv/http/app/templates/header.php
 
+### restore ###
 sed -i -e 's/<title>RuneAudio - RuneUIe<\/title>/<title>RuneAudio - RuneUI<\/title>/
 ' -e '/pnotify.css/,/<!-- enhancement -->/d
 ' -e '/barleft/,/lyricfade/d
