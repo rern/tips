@@ -10,7 +10,12 @@ sed
 **a\\** : append line  
 **i\\** : insert(prepend) line  
 **d** : delete line  
-...**\\** : escaped newline  
+**^** : start  
+**$** : end  
+**^**... : start with ...  
+...**$** : end with ...  
+...**\\** : ... escaped newline  
+**$.\*[\\]^** : escape character to be literal  
 
 **Example**
 ```sh
