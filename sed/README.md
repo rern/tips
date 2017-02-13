@@ -17,7 +17,7 @@ sed
 **^**... : start with ...  
 ...**$** : end with ...  
 ...**\\** : ... escaped newline  
-**$.\*[\\]^** : escape characters to force literal  
+**$ . \* [ \\ ] ^** : escape characters to force literal  
 
 **Example**
 ```sh
