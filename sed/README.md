@@ -8,8 +8,10 @@ sed
 **$**'...\\'...' : for escaped 'single quote' in pattern  
 **"**...$var...**"** : variable must be inside double quote  
 
-**\\|**...**|** : (left one only) escaped line search delimiter other than '/'  
+**\\|**...**|** : line search (left one only escaped delimiter other than '/')  
 **/**1st...**/,/**last...**/** : line range search  
+**0,/**...**/** : only 1st matched line search  
+'**1** i\\...' : 1st line prepend  
 
 **\.** : single character wildcard  
 \* : multiple character wildcard  
@@ -19,8 +21,6 @@ sed
 **a\\** : append line  
 **i\\** : insert(prepend) line  
 **d** : delete line  
-'**0,/**...**/ {/**...**/ d}**' : delete only 1st matched line  
-'**1** i\\...' : prepend 1st line  
 
 **^** : at start  
 **$** : at end  
