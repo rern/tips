@@ -19,7 +19,8 @@ sed
 **a\\** : append line  
 **i\\** : insert(prepend) line  
 **d** : delete line  
-'**0,/**...**/ {/**...***/ d}***' : delete only 1st matched line
+'**0,/**...**/ {/**...**/ d}**' : delete only 1st matched line  
+'**1** i\\...' : prepend 1st line  
 
 **^** : at start  
 **$** : at end  
