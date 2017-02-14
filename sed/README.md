@@ -3,19 +3,27 @@ sed
 
 **-i** : in-place edit input file  
 **-e** : sequence edit  
+
 **s|** : substitute delimiter can be any symbol / character (single byte)  
 **$**' : for escaped 'single quote' in pattern  
+**"**...$var...**"** : variable must be inside double quote  
+
 **\\|**pattern**|** : (left one only) escaped line search delimiter other than '/'  
 **\\|**1st pattern**|,|**last pattern**|** : line range search  
+
 **\.** : single character wildcard  
 \* : multiple character wildcard  
+
 **a\\** : append line  
 **i\\** : insert(prepend) line  
 **d** : delete line  
+'**0,/**...**/{/**...***/d;}***' : delete only 1st matched line
+
 **^** : at start  
 **$** : at end  
 **^**... : start with ...  
 ...**$** : end with ...  
+
 ...**\\** : ... escaped newline  
 **$ . \* [ \\ ] ^** : escape characters to force literal  
 
