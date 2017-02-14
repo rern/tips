@@ -13,6 +13,8 @@ sed
 
 **\.** : single character wildcard  
 \* : multiple character wildcard  
+**\\s** : space or tab  
+**\\+** : multiple characters  
 
 **a\\** : append line  
 **i\\** : insert(prepend) line  
