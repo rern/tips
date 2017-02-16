@@ -9,12 +9,14 @@ sed
 **"**...$var...**"** : variable must be inside double quote  
 
 **\\|**...**|** : line search (left one only escaped delimiter other than '/')  
-**/**1st...**/,/**last...**/** : line range search  
-**0,/**...**/** : line range search from line 0  
-**0,/**...**/** s/a.../b.../ : substitute only in 1st matched line  
-**0,/**...**/** {// d} : delete only 1st line matched '...'  
+**/**1st...**/, /**last...**/** : line range search  
+**0, /**...**/** : line range search from line 0  
+**0, /**...**/** {// d} : delete only 1st line matched '...'  
 **1 i\\**... : 1st line prepend  
 **$ a\\**... : last line append
+
+**s/**a...**/**b...**/** : substitute a... with b...  
+**s/**a...**/&**b...**/** : append b... to a...  
 
 **\.** : single character wildcard  
 \* : multiple character wildcard  
