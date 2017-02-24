@@ -6,5 +6,5 @@ zoom=$(grep -Po '(?<=^zoom-level=).*' /root/.config/midori/config)
 echo $zoom
 #or
 zoom=$(sed -n '/^zoom-level/ s/zoom-level=//p' /root/.config/midori/config)
-dcho $zoom
+echo $zoom
 ```
