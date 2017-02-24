@@ -5,6 +5,6 @@ Get `zoom-level` value from `/root/.config/midori/config`
 zoom=$(grep -Po '(?<=^zoom-level=).*' /root/.config/midori/config)
 echo $zoom
 #or
-zoom=$(grep -e '^zoom-level=' /root/.config/midori/config | sed 's/zoom-level=//')
-echo $zoom
+zoom=$(sed -n '/^zoom-level/ s/zoom-level=//p' /root/.config/midori/config)
+dcho $zoom
 ```
