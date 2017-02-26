@@ -3,6 +3,7 @@ sed
 
 **-i** : in-place edit input file  
 **-e** : sequence edit  
+**-n '/.../p'** : get only line  
 
 **s/** : substitute delimiter can be any symbol / character (single byte)  
 **$**'...\\'...' : for escaped 'single quote' in pattern  
