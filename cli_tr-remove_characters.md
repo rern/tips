@@ -1,5 +1,5 @@
 Remove characters from string
 ```sh
-echo 'string="aaabac"' | tr -d '"=a'
+tr -d '"=a' <<< 'string="aaabac"'
 # stringbc
 ```
