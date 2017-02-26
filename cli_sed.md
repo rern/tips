@@ -4,7 +4,6 @@ sed
 `-i` : in-place edit input file  
 `-e` : sequence edit  
 
-`-n '/.../p'` : get only line  
 `s/` : substitute delimiter can be any symbol or character (single byte)  
 `$'...\'...\'...'` : for escaped 'single quote' in pattern  
 `"...$var..."` : variable must be inside double quote  
@@ -24,9 +23,10 @@ sed
 `\s` : space or tab  
 `\+` : multiple characters  
 
-`a\` : append line  
-`i\` : insert(prepend) line  
+`a\ ...` : append line  
+`i\ ...` : insert(prepend) line  
 `/.../ d` : delete line  
+`-n '/.../p'` : get line  
 
 `^` : at start  
 `$` : at end  
