@@ -6,7 +6,7 @@ sed
 
 `-n '/.../p'` : get only line  
 `s/` : substitute delimiter can be any symbol or character (single byte)  
-`$'...'...'` : for escaped 'single quote' in pattern  
+`$'...\'...\'...'` : for escaped 'single quote' in pattern  
 `"...$var..."` : variable must be inside double quote  
 
 `\|...|` : line search (left one only escaped delimiter other than `/`)  
