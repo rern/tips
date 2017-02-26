@@ -1,6 +1,9 @@
-`cut` by use `-d` delimiter `"` at `-f6` field 6
+Get quoted word
 
 ```sh
-echo 'key1="value1" key2="value2" key3="value3" key4="value4"' | cut -d '"' -f6
+cut -d '"' -f6 <<< 'key1="value1" key2="value2" key3="value3" key4="value4"'
 # value3
 ```
+`-d` : delimiter mode  
+`'"'` : delimiter character  
+`-f6` : field 6  
