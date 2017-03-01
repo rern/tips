@@ -1,28 +1,28 @@
 ```sh
-sfdisk /dev/sdx <<<'start,size,type,bootable'
+echo 'start,size,type,bootable' | sfdisk /dev/sdx
 ```
 default  
 `start` first available sector  
 `size` largest from start  
-`type` ext4  
+`type` linux  
 `bootable` no  
 
 Create single partition
 ```sh
-sfdisk /dev/sdx <<<';'
+echo ';' | sfdisk /dev/sdx
 ```
 
 Create single FAT partition
 ```sh
-sfdisk /dev/sdx <<<',,c;'
+echo ',,c;' | sfdisk /dev/sdx
 ```
 
 Create 2 partitions: 2.4GB + the rest
 ```sh
-sfdisk /dev/sdx <<<',2.4G;'
+echo -e ',2.4G\n,;' | sfdisk /dev/sdx
 ```
 
-Create 3 partitions: 2.4GB + the rest
+Create 3 partitions: 2.4GB + 1.2GB + the rest
 ```sh
-sfdisk /dev/sdx <<<',2.4G,1.2G;'
+echo -e ',2.4G\n,1.2G\n,;' | sfdisk /dev/sdx
 ```
