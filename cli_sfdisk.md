@@ -1,11 +1,11 @@
 ```sh
 sfdisk /dev/sdx <<<'start,size,type,bootable'
 ```
-default
-`start` first available sector
-`size` largest from start
-`type` ext4
-`bootable` no
+default  
+`start` first available sector  
+`size` largest from start  
+`type` ext4  
+`bootable` no  
 
 Create single partition
 ```sh
