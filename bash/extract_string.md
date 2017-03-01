@@ -12,4 +12,10 @@ extract=${string:0:-3} # 1234567
 extract=${string: -3}  # 890
 
 extract=${string:-3}   # 1234567890 not applicable!!!
+
+numstring=1.23ab
+extract=${numstring//[^0-9.]/} # 1.23
+
+float=1.23
+extract=${float%.*}   # 1 (round down)
 ```
