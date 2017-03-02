@@ -1,21 +1,21 @@
-**string**
+**number** or **string** or **file**
 ```sh
-if [[ $var = srting ]]; then
+if [[ $num -eq 123 || $str = abc && -e $file ]]; then
   ...
 else
   ...
 fi
 
-[[ $var = string ]] && ... || ...
+[[ $num -eq 123 || $var = abc && -e $file ]] && ... || ...
 ```
 
 **number**
 ```sh
-if (( $var == 1 )); then
+if (( $num > 0 && $num == 123 )); then
   ...
 else
   ...
 fi
 
-(( $var == 1 )) && ... || ...
+(( $num > 0 && $num == 123 )) && ... || ...
 ```
