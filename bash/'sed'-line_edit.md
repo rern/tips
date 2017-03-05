@@ -34,5 +34,6 @@ sed
 `^...` : start with ...  
 `...$` : end with ...  
 
-`...\` : ... escaped newline  
+`...\` : escaped newline at each line end
+`...\\` : escaped newline within double quote  
 `$ . * [ \ ] ^` : escape characters to force literal  
