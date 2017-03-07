@@ -19,7 +19,7 @@ sed
 `s/a.../&b.../` : append b... to a...  
 
 `.` : single character wildcard  
-`*` : multiple character wildcard  
+`.*` : multiple character wildcard  
 `[^ ]*` : zero or more characters that `^` are not space  
 `\s` : space or tab  
 `\+` : multiple characters  
