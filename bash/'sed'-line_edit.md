@@ -35,5 +35,5 @@ sed
 `...$` : end with ...  
 
 `...\` : escaped split line at line end  
-`...\\` : escaped newline within double quote  
+`...\\` : escaped split line within double quote  
 `$ . * [ \ ] ^` : escape characters to force literal  
