@@ -5,7 +5,8 @@ sed
 `-e` : sequence edit  
 
 `s/` : substitute delimiter can be any symbol or character (single byte)  
-`$'...\'...\'...'` : for escaped 'single quote' in pattern  
+`$'...\'...\'...'` : `$` + escaped 'single quote' inside single quote  
+`"...\"...\"..."` : escaped 'double quote' inside double quote  
 `"...$var..."` : variable must be inside double quote  
 
 `\|...|` : line search (left one only escaped delimiter other than `/`)  
@@ -21,6 +22,7 @@ sed
 `.` : single character wildcard  
 `.*` : multiple character wildcard  
 `[^ ]*` : zero or more characters that `^` are not space  
+`[^...]` : zero or more characters that `^` are not any in `[...]`  
 `\s` : space or tab  
 `\+` : multiple characters  
 
@@ -32,7 +34,9 @@ sed
 `^` : at start  
 `$` : at end  
 `^...` : start with ...  
+`^[...]` : start with any in `[...]`  
 `...$` : end with ...  
+`[...]$` : end with any in `[...]`  
 
 `...\` : escaped split line at line end  
 `...\\` : escaped split line within double quote  
