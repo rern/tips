@@ -21,9 +21,15 @@ sed
 
 `.` : single character wildcard  
 `.*` : multiple character wildcard  
+`^` : at start  
+`$` : at end  
+`^...` : start with `...`  
+`^[...]` : start with any characters in `[...]`  
+`...$` : end with ...  
+`[...]$` : end with any characters in `[...]`  
 `[^ ]*` : zero or more characters that `^` are not space  
-`[^...]` : characters that `^` are not any in `[...]`  
-`[^...\{...\}]` : characters that `^` are not any in `[...]` or pattern in `\{...\}`  
+`[^...]` : `[^` not any characters in `...]`  
+`[^...\{...\}]` : `[^` not any characters in `...` or pattern in `\{...\}]`  
 `\s` : space or tab  
 `\+` : multiple characters  
 
@@ -31,13 +37,6 @@ sed
 `i\ ...` : insert(prepend) line  
 `/.../ d` : delete line  
 `-n '/.../p'` : get line  
-
-`^` : at start  
-`$` : at end  
-`^...` : start with `...`  
-`^[...]` : start with any in `[...]`  
-`...$` : end with ...  
-`[...]$` : end with any in `[...]`  
 
 `...\` : escaped split line at line end  
 `...\\` : escaped split line within double quote  
