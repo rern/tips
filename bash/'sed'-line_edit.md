@@ -14,7 +14,9 @@ sed
 `0, /.../` : line range search from line 0  
 `0, /.../ {// d}` : delete only 1st line matched `...`  
 `1 i\\...` : 1st line prepend  
-`$ a\\...` : last line append
+`n i\\...` : #n line prepend  
+`n a\\...` : #n line append  
+`$ a\\...` : last line append  
 
 `s/a.../b.../` : substitute `a...` with `b...`  
 `s/a.../&b.../` : append `b...` to `a...`  
