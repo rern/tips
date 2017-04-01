@@ -30,7 +30,7 @@ sed
 `[^ ]*` : zero or more characters that `^` are not space  
 `[^...]` : `[^` not any characters in `...]`  
 `[^...\{...\}]` : `[^` not any characters in `...` or pattern in `\{...\}]`  
-`\s` : space or tab  
+`\s` : space or tab in pattern 
 `\+` : multiple characters  
 
 `a\ ...` : append line  
@@ -41,3 +41,4 @@ sed
 `...\` : escaped split line at line end  
 `...\\` : escaped split line within double quote  
 `$ . * [ \ ] ^` : escape characters to force literal  
+`\t` : tab character
