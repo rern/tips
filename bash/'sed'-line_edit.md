@@ -39,6 +39,7 @@ sed
 `i\ ...` : insert(prepend) line  
 `/.../ d` : delete line  
 `-n '/.../p'` : print line  
+`-n '/.../{=}'` : print line number  
 
 `...\` : escaped split line at line end  
 `...\\` : escaped split line within double quote  
