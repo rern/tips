@@ -1,4 +1,8 @@
-**Extract**
+**Extract**  
+`-x` extract
+`-v` verbose  
+`-p` keep files permissions  
+`-f` file (must be right before compressed.file)
 ```sh
 bsdtar -xf compressed.file
 ```
