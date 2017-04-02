@@ -8,6 +8,7 @@ sed
 `$'...\'...\'...'` : `$` + escaped `'` inside single quote  
 `"...\"...\"..."` : escaped `"` inside double quote  
 `"...$var..."` : variable must be inside double quote  
+`'...'"$var"'...'` : double quoted variable inside single quote   
 
 `\|...|` : line search (left one only escaped delimiter other than `/`)  
 `/1st.../, /last.../` : line range search  
