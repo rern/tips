@@ -24,19 +24,18 @@ sed
 
 `.` : single character wildcard  
 `.*` : multiple character wildcard  
-`^` : at start  
-`$` : at end  
-`^...` : start with `...`  
-`^[...]` : start with any characters in `[...]`  
-`...$` : end with ...  
-`[...]$` : end with any characters in `[...]`  
-`[^ ]*` : zero or more characters that `^` are not space  
+`[...]` : any characters in `[...]`  
+`[...\{...\}]` : any characters in `[...` or pattern in `\{...\}]`  
 `[^...]` : `[^` not any characters in `...]`  
-`[^...\{...\}]` : `[^` not any characters in `...` or pattern in `\{...\}]`  
+`[^ ]*` : `*` zero or more characters that `^` are not space  
+
 `\s` : space or tab 
 `\t` : tab  
 `\n` : new line  
 `\+` : multiple characters  
+
+`^...` `^[...]` : start with  
+`...$` `[...]$` : end with  
 
 `a\ ...` : append line  
 `i\ ...` : insert(prepend) line  
