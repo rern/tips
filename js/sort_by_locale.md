@@ -1,5 +1,6 @@
 Sort Thai alphabetically
 ---
+(locale code not necessary)  
 
 **Sort in array**
 ```sh
