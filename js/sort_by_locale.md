@@ -3,8 +3,8 @@ Sort alphanumerically
 เรียงลำดับอักษร  
 by `Intl.Collator().compare` `localeCompare()`  
 
-`numeric: true` sort numeric text as number
-`sensitivity: base` sort base sensitive
+`{numeric: true}` sort numeric text as number  
+`{sensitivity: 'base}'` sort base sensitive  
 
 **Sort in array**
 ```js
