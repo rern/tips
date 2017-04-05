@@ -1,5 +1,6 @@
-Sort alphanumerically เรียงลำดับอักษร
+Sort alphanumerically
 --- 
+เรียงลำดับอักษร  
 by `Intl.Collator().compare` `localeCompare()`  
 
 **Sort in array**
