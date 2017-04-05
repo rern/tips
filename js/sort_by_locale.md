@@ -4,7 +4,7 @@ Sort alphanumerically
 by `Intl.Collator().compare` `localeCompare()`  
 
 `{numeric: true}` sort numeric text as number  
-`{sensitivity: 'base}'` sort base sensitive  
+`{sensitivity: 'base'}` sort base sensitive  
 
 **Sort in array**
 ```js
