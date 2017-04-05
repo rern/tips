@@ -1,6 +1,6 @@
-Sort Thai alphabetically
----
-(locale code not necessary)  
+Sort alphanumerically เรียงลำดับอักษร
+--- 
+by `Intl.Collator().compare` `localeCompare()`  
 
 **Sort in array**
 ```js
