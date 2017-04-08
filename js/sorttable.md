@@ -1,8 +1,11 @@
 sorttable 
 ---
 a jquery function + css for `table` with `thead` and `tbody`  
+- fixed header
+- scrollable body
+- responsive layout
   
-usage: sorttable('#tableid', tableHeight [, locale]);  (default locale: 'en')  
+usage: sorttable('#tableid', nonTableHeight [, locale]);  (default locale: 'en')  
   
 [locale code](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)  
 
@@ -63,7 +66,7 @@ jquery
 // *** sorttable by rern ***
 //	fixed header, scrollable body, responsive layout
 //
-//	usage: sorttable('#tableid', tableHeight [, locale]);  (default locale: 'en')
+//	usage: sorttable('#tableid', nonTableHeight [, locale]);  (default locale: 'en')
 
 // get scrollbar width
 var scrollDiv = document.createElement("div");
@@ -74,29 +77,30 @@ var scrollWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 document.body.removeChild(scrollDiv);
 
 // main function
-function sorttable(tbl, tblh, l) {
+function sorttable(tbl, nontableh, l) { // '#tableid', non-table height
 	// locale
 	loc = (l == null) ? 'en' : l;
 	// force scroll body
 	$('body').css('overflow', 'hidden'); // force hide desktop page scrollbar 
 	var thh = $(tbl +' thead').height();
-	$(tbl +' tbody').height(tblh - thh);
+	var tableh = window.innerHeight - nontableh; 
+	$(tbl +' tbody').height(tableh - thh);
 
-	// add L/R paddings column
+	// add L/R paddings column - set width
 	var pad = '<td class="pad"></td>';
 	$(tbl +' tr').prepend(pad).append(pad);
+	var tbw = 0;
+	$(tbl +' tbody tr').eq(0).find('td').each(function(i) {
+		tbw = tbw + $(this).outerWidth();
+	});
+	var pw = $(tbl +' td').eq(0).outerWidth() - $(tbl +' td').eq(0).width(); // L+R padding
+	var padw = Math.round( (window.innerWidth - tbw - scrollWidth) / 2)  + pw;
+	$('.pad').css('width', padw);
 	// align header to body column
 	$(tbl +' thead tr').eq(0).children().each(function(i) {
 			var tdw = $(tbl +' tbody td').eq(i).outerWidth();
 			$(this).css('width', tdw);
 	});
-	// set L/R paddings width
-	var tbw = 0;
-	$(tbl +' tbody tr').eq(0).find('td').each(function(i) {
-		tbw = tbw + $(this).outerWidth();
-	});
-	var padw = Math.round( (window.innerWidth - tbw - scrollWidth) / 2);
-	$('.pad').css('width', padw);
 	// zebra stripe row
 	$(tbl +' tbody tr:odd').addClass('zebra');
 	// convert table to array <tbody><tr><td> to [ ['a', 'b', 'c'], ['d', 'e', 'f'] ] (multi-dimensional)
@@ -139,7 +143,7 @@ function sorttable(tbl, tblh, l) {
 	// screen rotate
 	window.addEventListener('orientationchange', function() {
 		// reset padding
-		var padw = Math.round( (window.innerWidth - tbw - scrollWidth) / 2);
+		var padw = Math.round( (window.innerWidth - tbw - scrollWidth) / 2)  + pw;
 		$('.pad').css('width', padw);
 		// reset body height
 		var tableh = window.innerHeight - nontableh; 
