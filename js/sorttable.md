@@ -1,6 +1,6 @@
 sorttable 
 ---
-jquery  
+a jquery function + css  
 
 `table` with `thead` and `tbody`  
   
