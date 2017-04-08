@@ -66,7 +66,8 @@ document.body.removeChild(scrollDiv);
 
 // main function
 function sorttable(tbl, l) {
-	if (l == null) loc = 'en';
+	// locale
+	loc = (l == null) ? 'en' : l;
 	// force scroll body
 	var nontableh = 190; // *** sum of other height  - change height on screen rotate***
 	$('body').css('overflow', 'hidden'); // force hide desktop page scrollbar 
