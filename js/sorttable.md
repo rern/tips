@@ -1,4 +1,4 @@
-sorttable 
+sorttable.js 
 ---
 a jquery function + css for `table` with `thead` and `tbody`  
 - fixed header
