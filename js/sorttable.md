@@ -1,8 +1,6 @@
 sorttable 
 ---
-a jquery function + css  
-
-`table` with `thead` and `tbody`  
+a jquery function + css for `table` with `thead` and `tbody`  
   
 usage: sorttable('#tableid', tableHeight [, locale]);  (default locale: 'en')  
   
