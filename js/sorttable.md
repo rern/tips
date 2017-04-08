@@ -34,14 +34,14 @@ thead {
 	cursor: pointer;
 	user-select: none;
 }
-thead td:empty {
+thead td:empty, thead th:empty {
 	pointer-events: none;
 }
 tbody {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch; /* ios momentum scroll */
 }
-td {
+td, th {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0 0 0 5px;
