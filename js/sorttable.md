@@ -54,9 +54,7 @@ jquery
 // *** sorttable by rern ***
 //	fixed header, scrollable body, responsive layout
 //
-//	usage: tablesort('#tableid');
-//	
-//	(set locale in localeCompare)
+//	usage: sorttable('#tableid' [, locale]);
 
 // get scrollbar width
 var scrollDiv = document.createElement("div");
@@ -67,7 +65,8 @@ var scrollWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 document.body.removeChild(scrollDiv);
 
 // main function
-function tablesort(tbl) {
+function sorttable(tbl, l) {
+	if (l == null) loc = 'en';
 	// force scroll body
 	var nontableh = 190; // *** sum of other height  - change height on screen rotate***
 	$('body').css('overflow', 'hidden'); // force hide desktop page scrollbar 
@@ -107,9 +106,9 @@ function tablesort(tbl) {
 		// sort row array (multi-dimensional)
 		var sorted = arr.sort(function(a, b) {
 				if (order == 'asc') {
-					return a[col].localeCompare(b[col], 'th', {numeric: true});
+					return a[col].localeCompare(b[col], loc, {numeric: true});
 				} else {
-					return b[col].localeCompare(a[col], 'th', {numeric: true});
+					return b[col].localeCompare(a[col], loc, {numeric: true});
 				}
 		});
 		// get empty row template
