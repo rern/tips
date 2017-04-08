@@ -1,3 +1,14 @@
+sorttable 
+---
+jquery  
+
+`table` with `thead` and `tbody`  
+  
+usage: sorttable('#tableid', tableHeight [, locale]);  (default locale: 'en')  
+  
+[locale code](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)  
+
+
 css
 ---
 ```css
@@ -54,7 +65,7 @@ jquery
 // *** sorttable by rern ***
 //	fixed header, scrollable body, responsive layout
 //
-//	usage: sorttable('#tableid' [, locale]);  (default locale: 'en')
+//	usage: sorttable('#tableid', tableHeight [, locale]);  (default locale: 'en')
 
 // get scrollbar width
 var scrollDiv = document.createElement("div");
@@ -65,15 +76,13 @@ var scrollWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 document.body.removeChild(scrollDiv);
 
 // main function
-function sorttable(tbl, l) {
+function sorttable(tbl, tblh, l) {
 	// locale
 	loc = (l == null) ? 'en' : l;
 	// force scroll body
-	var nontableh = 190; // *** sum of other height  - change height on screen rotate***
 	$('body').css('overflow', 'hidden'); // force hide desktop page scrollbar 
 	var thh = $(tbl +' thead').height();
-	var tableh = window.innerHeight - nontableh; 
-	$(tbl +' tbody').height(tableh - thh);
+	$(tbl +' tbody').height(tblh - thh);
 
 	// add L/R paddings column
 	var pad = '<td class="pad"></td>';
