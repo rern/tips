@@ -54,7 +54,7 @@ jquery
 // *** sorttable by rern ***
 //	fixed header, scrollable body, responsive layout
 //
-//	usage: sorttable('#tableid' [, locale]);
+//	usage: sorttable('#tableid' [, locale]);  (default locale: 'en')
 
 // get scrollbar width
 var scrollDiv = document.createElement("div");
