@@ -1,8 +1,9 @@
 css
 ---
 ```css
-/* *** sorttable ***
-	fixed header, scrollable body, responsive layout */
+/* *** sorttable by rern ***
+	fixed header, scrollable body, responsive layout 
+*/
 table {
 	display: flex;
 	flex-direction: column;
@@ -52,10 +53,10 @@ td {
 jquery
 ---
 ```js
-// *** sorttable ***
-//		fixed header, scrollable body, responsive layout
-
-//		usage: tablesort('#tableid');
+// *** sorttable by rern ***
+//	fixed header, scrollable body, responsive layout
+//
+//	usage: tablesort('#tableid');
 
 // get scrollbar width
 var scrollDiv = document.createElement("div");
