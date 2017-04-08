@@ -46,7 +46,6 @@ td {
 .zebra {
 	background: #f0f0f0 !important;
 }
-/* sorttable */
 ```
 
 jquery
