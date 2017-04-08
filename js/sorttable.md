@@ -18,7 +18,6 @@ table {
 thead {
 	height: 40px;
 	line-height: 40px;
-	background: #EFFBF8;
 	border-bottom: 1px solid #eee;
 	cursor: pointer;
 	user-select: none;
@@ -57,6 +56,8 @@ jquery
 //	fixed header, scrollable body, responsive layout
 //
 //	usage: tablesort('#tableid');
+//	
+//	(set locale in localeCompare)
 
 // get scrollbar width
 var scrollDiv = document.createElement("div");
