@@ -7,6 +7,7 @@ a jquery function + css for `table` with `thead` and `tbody`
   
 usage:  
 ```js
-sorttable('#tableid', nonTableHeight [, locale]);  (default locale: 'en')  
+sorttable('#tableid', nonTableHeight [, locale]);  
  ```
+default locale: 'en'  
 [locale code](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)  
