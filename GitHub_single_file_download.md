@@ -1,4 +1,4 @@
-Single file download from GitHub
+GitHub single file download from GitHub
 ---
 - open the file page  
 - right-click `Raw` button > `Save link as...`
