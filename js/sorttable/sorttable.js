@@ -1,7 +1,7 @@
 // *** sorttable by rern ***
 //	fixed header, scrollable body, screen rotate responsive
 //
-//	usage: sorttable('#tableid', nonTableHeight [, locale]);  (default locale: 'en')
+//	usage: sorttable('#tableid', nonTableHeight [, 'locale']);  (default locale: 'en')
 
 // get scrollbar width
 var scrollDiv = document.createElement("div");
