@@ -1,68 +1,3 @@
-sorttable.js 
----
-a jquery function + css for `table` with `thead` and `tbody`  
-- fixed header
-- scrollable body
-- screen rotate responsive
-  
-usage: sorttable('#tableid', nonTableHeight [, locale]);  (default locale: 'en')  
-  
-[locale code](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)  
-
-
-css
----
-```css
-/* *** sorttable by rern ***
-	fixed header, scrollable body, screen rotate responsive
-*/
-table {
-	display: flex;
-	flex-direction: column;
-	margin: 0 auto;
-	border-collapse: collapse;
-	border-style: none;
-	border-width: 0;
-	border-spacing: 0;
-	padding: 0;
-	white-space: nowrap;
-}
-thead {
-	height: 40px;
-	line-height: 40px;
-	border-bottom: 1px solid #eee;
-	cursor: pointer;
-	user-select: none;
-}
-thead td:empty, thead th:empty {
-	pointer-events: none;
-}
-tbody {
-	overflow: auto;
-	-webkit-overflow-scrolling: touch; /* ios momentum scroll */
-}
-td, th {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0 0 0 5px;
-	height: 30px;
-}
-.asc:after {
-	content: '\2009\25b2';
-	color: green;
-}
-.desc:after {
-	content: '\2009\25bc';
-	color: crimson;
-}
-.zebra {
-	background: #f0f0f0 !important;
-}
-```
-
-jquery
----
-```js
 // *** sorttable by rern ***
 //	fixed header, scrollable body, screen rotate responsive
 //
@@ -156,4 +91,3 @@ function sorttable(table, nonTableHight, locale) {
 		$(table +' tbody').height(tableh - thh);
 	});
 }
-```
