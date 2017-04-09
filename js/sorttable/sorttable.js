@@ -13,6 +13,15 @@ document.body.removeChild(scrollDiv);
 
 // main function
 function sorttable(table, nonTableHight, locale) {
+
+	// align header to body column
+	function tdalign() {
+		$(table +' thead tr').eq(0).children().each(function(i) {
+			var tdw = $(table +' tbody td').eq(i).outerWidth();
+			$(this).css('width', tdw);
+		});
+	}
+
 	// convert table body to array [ ['a', 'b', 'c'], ['d', 'e', 'f'] ]
 	var arr = Array.prototype.map.call(document.querySelectorAll(table +' tbody tr'), function(tr){
 		return Array.prototype.map.call(tr.querySelectorAll('td'), function(td){
@@ -24,31 +33,29 @@ function sorttable(table, nonTableHight, locale) {
 	var loc = (locale == null) ? 'en' : locale;
 	// force scroll body
 	var thh = $(table +' thead').height();
-	var tableh = window.innerHeight - nonTableHight; 
+	var tableh = $(window).innerHeight() - nonTableHight; 
 	$(table +' tbody').height(tableh - thh);
 	$('body').css('overflow', 'hidden'); // force hide page scrollbar 
 
 	// add l/r paddings column - set width to keep table center
-	var pad = '<td class="pad"></td>';
-	$(table +' tr').prepend(pad).append(pad);
 	var tbw = 0;
 	$(table +' tbody tr').eq(0).find('td').each(function(i) {
-		tbw = tbw + $(this).outerWidth();
+		if ($(this).is(':visible')) tbw = tbw + $(this).outerWidth();
 	});
 	var padding = $(table +' td').eq(0).outerWidth() - $(table +' td').eq(0).width(); // l+r padding
-	var padw = Math.round( (window.innerWidth - tbw - scrollWidth) / 2)  + padding;
-	$('.pad').css('width', padw);
-	// align header to body column
-	$(table +' thead tr').eq(0).children().each(function(i) {
-			var tdw = $(table +' tbody td').eq(i).outerWidth();
-			$(this).css('width', tdw);
-	});
+	var padw = Math.round( ($(window).innerWidth() - tbw - scrollWidth) / 2)  + padding;
+	var pad = '<td class="pad" style="width:'+ padw +'px"></td>';
+	$(table +' tr').prepend(pad).append(pad);
 	// get empty row template
 	var tbltr = $(table +' tbody tr').eq(0).clone().find('td').empty().end(); // 'end()' - back to outer <tr> after find inside
 	// add at bottom an empty row
 	$(table +' tbody').append('<tr><td></td></tr>');
 	// zebra stripe row
 	$(table +' tbody tr:odd').addClass('zebra');
+	// align header to body column
+	setTimeout(function() { // fix misaligned header
+		tdalign();
+	}, 100);
 
 	// click
 	$(table +' thead tr').eq(0).children().click(function() {
@@ -83,11 +90,13 @@ function sorttable(table, nonTableHight, locale) {
 	});
 	// on screen rotate
 	window.addEventListener('orientationchange', function() {
-		// refresh padding
-		var padw = Math.round( (window.innerWidth - tbw - scrollWidth) / 2)  + padding;
-		$('.pad').css('width', padw);
 		// refresh body height
-		var tableh = window.innerHeight - nonTableHight; 
+		var tableh = $(window).innerHeight() - nonTableHight; 
 		$(table +' tbody').height(tableh - thh);
+		// refresh padding width
+		var padw = Math.round( ($(window).innerWidth() - tbw - scrollWidth) / 2)  + padding;
+		$('.pad').css('width', padw);
+		// align header to body column
+		tdalign();
 	});
 }
