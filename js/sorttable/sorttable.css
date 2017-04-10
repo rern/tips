@@ -15,7 +15,7 @@ table {
 thead {
 	height: 40px;
 	line-height: 40px;
-	border-bottom: 1px solid #eee;
+	background: #a8a8a8;
 	cursor: pointer;
 	user-select: none;
 }
