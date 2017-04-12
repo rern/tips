@@ -12,7 +12,7 @@
 	padding: 0;
 	white-space: nowrap;
 }
-.sorttable thead, .thead2 {
+.sorttable thead {
 	height: 40px;
 	line-height: 40px;
 	background: #EFFBF8;
