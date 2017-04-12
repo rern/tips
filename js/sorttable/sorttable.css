@@ -1,7 +1,7 @@
 /* *** sorttable by rern ***
 	fixed header, scrollable body, screen rotate responsive
 */
-table {
+.sorttable {
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
@@ -12,34 +12,36 @@ table {
 	padding: 0;
 	white-space: nowrap;
 }
-thead {
+.sorttable thead, .thead2 {
 	height: 40px;
 	line-height: 40px;
-	background: #a8a8a8;
+	background: #EFFBF8;
+	border-bottom: 1px solid #eee;
 	cursor: pointer;
 	user-select: none;
 }
-thead td:empty, thead th:empty {
+.sorttable thead td:empty {
 	pointer-events: none;
 }
-tbody {
+.sorttable tbody {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch; /* ios momentum scroll */
 }
-td, th {
+.sorttable td {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0 0 0 5px;
 	height: 30px;
 }
 .asc:after {
-	content: '\2009\25b2';
+	content: '\200a\25b2';
 	color: green;
 }
 .desc:after {
-	content: '\2009\25bc';
+	content: '\200a\25bc';
 	color: crimson;
 }
 .zebra {
 	background: #f0f0f0 !important;
 }
+
