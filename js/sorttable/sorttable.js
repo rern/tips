@@ -102,11 +102,13 @@ function sorttable(table, nonTableH, locale) {
 	
 	// #7 - on screen rotate
 	window.addEventListener('orientationchange', function() {
+		$(table).hide()
 		setTimeout(function() { // wait for table rendering
 			var padw = Math.round( ($(window).innerWidth() - tbw - scrollWidth) / 2)  + padlrw;
 			$('.pad').css('width', padw);
-			tdalign();
+			tdalign(); // realign to fit media query 'td' width
 			scrollbody()
+			$(table).fadeIn(100)
 		}, 100);
 	});
 }
