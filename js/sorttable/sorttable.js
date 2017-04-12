@@ -1,7 +1,7 @@
 // *** sorttable by rern ***
 //	fixed header, scrollable body, screen rotate responsive
 //
-//	usage: sorttable('#tableid', nonTableHeight [, 'locale']);  (default locale: 'en')
+//	usage: sorttable('#tableid' [, nonTableH , 'locale']);  (default: [, 0, 'en'])
 
 // get scrollbar width
 var scrollDiv = document.createElement("div");
@@ -12,56 +12,67 @@ var scrollWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 document.body.removeChild(scrollDiv);
 
 // main function
-function sorttable(table, nonTableHight, locale) {
-
-	// align header to body column
-	function tdalign() {
-		$(table +' thead tr').eq(0).children().each(function(i) {
-			var tdw = $(table +' tbody td').eq(i).outerWidth();
-			$(this).css('width', tdw);
-		});
-	}
-
-	// convert table body to array [ ['a', 'b', 'c'], ['d', 'e', 'f'] ]
+function sorttable(table, nonTableH, locale) {
+	var nonTableHight = (nonTableH == null) ? 0 : nonTableH;
+	var loc = (locale == null) ? 'en' : locale; // default locale
+	var tbh = $(table +' tbody').outerHeight();	// initial height
+	// convert 'tbody' to array [ ['a', 'b', 'c'], ['d', 'e', 'f'] ]
 	var arr = Array.prototype.map.call(document.querySelectorAll(table +' tbody tr'), function(tr){
 		return Array.prototype.map.call(tr.querySelectorAll('td'), function(td){
 			var cell = td.innerHTML;
 			return cell
 		});
 	});
-	// locale
-	var loc = (locale == null) ? 'en' : locale;
-	// force scroll body
-	var thh = $(table +' thead').height();
-	var tableh = $(window).innerHeight() - nonTableHight; 
-	$(table +' tbody').height(tableh - thh);
-	$('body').css('overflow', 'hidden'); // force hide page scrollbar 
+	
+	// #0 - add class
+	$(table).addClass('sorttable');
 
-	// add l/r paddings column - set width to keep table center
+	// #1 - scroll 'tbody'
+	function scrollbody() {
+		setTimeout(function() {
+			// before get window height, exclude table which may has horizontal scrollbar
+			$(table).hide(); // should 'display: none' to avoid default table flash on load
+			var tbodyh = $(window).height() - nonTableHight - $(table +' thead').outerHeight();
+			$(table +' tbody').height(tbodyh);
+			$(table).fadeIn(100).css('display', 'flex'); // unhide table
+			$(document).scrollTop(0);
+		}, 200);
+	}
+	scrollbody();
+
+	// #2 - add l/r pad 'td' - set width to keep table center
 	var tbw = 0;
 	$(table +' tbody tr').eq(0).find('td').each(function(i) {
-		if ($(this).is(':visible')) tbw = tbw + $(this).outerWidth();
+		if ($(this).is(':visible')) tbw = tbw + $(this).width();
 	});
-	var padding = $(table +' td').eq(0).outerWidth() - $(table +' td').eq(0).width(); // l+r padding
-	var padw = Math.round( ($(window).innerWidth() - tbw - scrollWidth) / 2)  + padding;
+	var padlrw = $(table +' td').eq(0).outerWidth() - $(table +' td').eq(0).width(); // width for both l/r pads
+	var padw = Math.round( ($(window).innerWidth() - tbw - scrollWidth) / 2)  + padlrw;
 	var pad = '<td class="pad" style="width:'+ padw +'px"></td>';
 	$(table +' tr').prepend(pad).append(pad);
-	// get empty row template
-	var tbltr = $(table +' tbody tr').eq(0).clone().find('td').empty().end(); // 'end()' - back to outer <tr> after find inside
-	// add at bottom an empty row
-	$(table +' tbody').append('<tr><td></td></tr>');
-	// zebra stripe row
-	$(table +' tbody tr:odd').addClass('zebra');
-	// align header to body column
-	setTimeout(function() { // fix misaligned header
-		tdalign();
-	}, 100);
+	
+	// #3 - align 'thead td' to 'tbody td'
+	function tdalign() {
+		setTimeout(function() { // wait for table rendering
+			$(table +' thead tr').eq(0).children().each(function(i) {
+				var tdw = $(table +' tbody td').eq(i).outerWidth(); // 'outerWidth()'
+				$(this).css('width', tdw);
+			});
+		}, 100);
+	}
+	tdalign();
 
-	// click
+	// #4 - add at bottom an empty 'tr'
+	var tbltr = $(table +' tbody tr').eq(0).clone().find('td').empty().end(); // 'end()' - back to parent 'tr' after find
+		$(table +' tbody').append('<tr><td></td></tr>');
+	
+	// #5 - zebra stripe 'tr'
+	$(table +' tbody tr:odd').addClass('zebra');
+	
+	// #6 - click to sort 'tr'
 	$(table +' thead tr').eq(0).children().click(function() {
-		var col = $(this).index() - 1; // no L/R padding in array 'tbltr' / 'sorted'
+		var col = $(this).index() - 1; // no l/r pad in array 'tbltr' / 'sorted'
 		var order = $(this).hasClass('asc') ? 'desc' : 'asc';
-		// sort row array (multi-dimensional)
+		// sort array (multi-dimensional)
 		var sorted = arr.sort(function(a, b) {
 				if (order == 'asc') {
 					return a[col].localeCompare(b[col], loc, {numeric: true});
@@ -69,34 +80,33 @@ function sorttable(table, nonTableHight, locale) {
 					return b[col].localeCompare(a[col], loc, {numeric: true});
 				}
 		});
-		// get empty row template
+		// get empty 'tr' template
 		var tbltr = $(table +' tbody tr').eq(0).clone().find('td').empty().end();
-		// empty body
+		// empty and refill 'tbody'
 		$(table +' tbody').empty();
-		// refill body
 		$.each(sorted, function(i, ar) {
 			tbltr.find('td').each(function(j) {
 				if (j) $(this).html(ar[j-1]);
 			});
 			$(table +' tbody').append(tbltr[0].outerHTML);
 		});
-		// add at bottom an empty row
+		// add at bottom an empty 'tr'
 		$(table +' tbody').append('<tr><td></td></tr>');
-		// zebra stripe row
+		// zebra stripe 'tr'
 		$(table +' tbody tr:odd').addClass('zebra');
-		// switch sort icon
+		// switch sort icon in thead td
 		$(this).siblings().addBack().removeClass('asc desc');
 		$(this).addClass(order);
+
 	});
-	// on screen rotate
+	
+	// #7 - on screen rotate
 	window.addEventListener('orientationchange', function() {
-		// refresh body height
-		var tableh = $(window).innerHeight() - nonTableHight; 
-		$(table +' tbody').height(tableh - thh);
-		// refresh padding width
-		var padw = Math.round( ($(window).innerWidth() - tbw - scrollWidth) / 2)  + padding;
-		$('.pad').css('width', padw);
-		// align header to body column
-		tdalign();
+		setTimeout(function() { // wait for table rendering
+			var padw = Math.round( ($(window).innerWidth() - tbw - scrollWidth) / 2)  + padlrw;
+			$('.pad').css('width', padw);
+			tdalign();
+			scrollbody()
+		}, 100);
 	});
 }
