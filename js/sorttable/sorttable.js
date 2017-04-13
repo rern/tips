@@ -12,10 +12,10 @@ var scrollWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 document.body.removeChild(scrollDiv);
 
 // main function
-function sorttable(table, nonTableH, locale) {
-	var nonTableHight = (nonTableH == null) ? 0 : nonTableH;
+function sorttable(table, nonTableHight, locale) { // '#tableid' [, non-table height, locale])
+	var minfixedH = 415; // min height to apply fixed thead
+	var nontblH = (nonTableHight == null) ? 0 : nonTableHight;
 	var loc = (locale == null) ? 'en' : locale; // default locale
-	var tbh = $(table +' tbody').outerHeight();	// initial height
 	// convert 'tbody' to array [ ['a', 'b', 'c'], ['d', 'e', 'f'] ]
 	var arr = Array.prototype.map.call(document.querySelectorAll(table +' tbody tr'), function(tr){
 		return Array.prototype.map.call(tr.querySelectorAll('td'), function(td){
@@ -26,51 +26,58 @@ function sorttable(table, nonTableH, locale) {
 	
 	// #0 - add class
 	$(table).addClass('sorttable');
-
+	var tblH = $(table).outerHeight();
+	var thH = $('.sorttable thead').outerHeight();
+	var tbH = tblH- thH; // initial height
+	
 	// #1 - scroll 'tbody'
 	function scrollbody() {
 		setTimeout(function() {
-			// before get window height, exclude table which may has horizontal scrollbar
-			$(table).hide(); // should 'display: none' to avoid default table flash on load
-			var tbodyh = $(window).height() - nonTableHight - $(table +' thead').outerHeight();
-			$(table +' tbody').height(tbodyh);
-			$(table).fadeIn(100).css('display', 'flex'); // unhide table
-			$(document).scrollTop(0);
+			// before get window height without table (which may has horizontal scrollbar)
+			$(table).hide(); // should 'display: none' to avoid table flash on load
+			var tbodyH = $(window).height() - nontblH - thH;
+			// reset to normal height from 'noscrollbody()'
+			$('body').css('height', '100%');
+			$(table +' tbody').height(tbodyH);
+			// unhide table
+			$(table).fadeIn(100).css('display', 'flex');
+			$(window).scrollTop(0);
 		}, 200);
 	}
 	scrollbody();
 
-	// #2 - add l/r pad 'td' - set width to keep table center
-	var tbw = 0;
+	// #2 - add l/r 'td' pads to keep table center
+	var tbW = 0;
 	$(table +' tbody tr').eq(0).find('td').each(function(i) {
-		if ($(this).is(':visible')) tbw = tbw + $(this).width();
+		if ($(this).is(':visible')) tbW = tbW + $(this).width();
 	});
-	var padlrw = $(table +' td').eq(0).outerWidth() - $(table +' td').eq(0).width(); // width for both l/r pads
-	var padw = Math.round( ($(window).innerWidth() - tbw - scrollWidth) / 2)  + padlrw;
-	var pad = '<td class="pad" style="width:'+ padw +'px"></td>';
+	// sum width of 'td' padding
+	var tdpadW = $(table +' td').eq(0).outerWidth() - $(table +' td').eq(0).width();
+	var padW = Math.round( ($(window).innerWidth() - tbW - scrollWidth) / 2)  + tdpadW;
+	var pad = '<td class="pad" style="width:'+ padW +'px"></td>';
 	$(table +' tr').prepend(pad).append(pad);
 	
 	// #3 - align 'thead td' to 'tbody td'
 	function tdalign() {
 		setTimeout(function() { // wait for table rendering
 			$(table +' thead tr').eq(0).children().each(function(i) {
-				var tdw = $(table +' tbody td').eq(i).outerWidth(); // 'outerWidth()'
-				$(this).css('width', tdw);
+				var tdW = $(table +' tbody td').eq(i).outerWidth(); // include padding
+				$(this).css('width', tdW);
 			});
 		}, 100);
 	}
 	tdalign();
 
-	// #4 - add at bottom an empty 'tr'
+	// #4 - add empty 'tr' to bottom
 	var tbltr = $(table +' tbody tr').eq(0).clone().find('td').empty().end(); // 'end()' - back to parent 'tr' after find
 		$(table +' tbody').append('<tr><td></td></tr>');
 	
 	// #5 - zebra stripe 'tr'
 	$(table +' tbody tr:odd').addClass('zebra');
 	
-	// #6 - click to sort 'tr'
+	// #6 - click 'thead' to sort
 	$(table +' thead tr').eq(0).children().click(function() {
-		var col = $(this).index() - 1; // no l/r pad in array 'tbltr' / 'sorted'
+		var col = $(this).index() - 1; // no pad 'td' in array 'tbltr' / 'sorted'
 		var order = $(this).hasClass('asc') ? 'desc' : 'asc';
 		// sort array (multi-dimensional)
 		var sorted = arr.sort(function(a, b) {
@@ -90,23 +97,23 @@ function sorttable(table, nonTableH, locale) {
 			});
 			$(table +' tbody').append(tbltr[0].outerHTML);
 		});
-		// add at bottom an empty 'tr'
+		// add empty 'tr' to bottom
 		$(table +' tbody').append('<tr><td></td></tr>');
 		// zebra stripe 'tr'
 		$(table +' tbody tr:odd').addClass('zebra');
 		// switch sort icon in thead td
 		$(this).siblings().addBack().removeClass('asc desc');
 		$(this).addClass(order);
-
 	});
 	
-	// #7 - on screen rotate
+	// #7 - screen rotate
 	window.addEventListener('orientationchange', function() {
-		$(table).hide()
-		setTimeout(function() { // wait for table rendering
-			var padw = Math.round( ($(window).innerWidth() - tbw - scrollWidth) / 2)  + padlrw;
-			$('.pad').css('width', padw);
-			tdalign(); // realign to fit media query 'td' width
+		$(table).hide(); // suppress table flash
+		setTimeout(function() { // wait rendering
+			var padW = Math.round( ($(window).innerWidth() - tbW - scrollWidth) / 2)  + tdpadW;
+			$('.pad').css('width', padW);
+			// realign to fit media query 'td' width
+			tdalign();
 			scrollbody()
 			$(table).fadeIn(100)
 		}, 100);
