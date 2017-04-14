@@ -5,12 +5,9 @@ Force href open in web app window
 javascript  
 ```js
 if ( ("standalone" in window.navigator) && window.navigator.standalone ) {
-	// If you want to prevent remote links in standalone web apps opening Mobile Safari, change 'remotes' to true
-	var noddy, remotes = true;
-	
+	var noddy, remotes = true;	
 	document.addEventListener('click', function(event) {
 		noddy = event.target;
-		// Bubble up until we hit link or top HTML element. Warning: BODY element is not compulsory so better to stop on HTML
 		while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
 	        noddy = noddy.parentNode;
 	    }
