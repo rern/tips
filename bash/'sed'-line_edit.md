@@ -28,18 +28,20 @@ sed
 `\+` : 1 or more of preceding character  
 `*` : 0 or more of preceding character  
 
-`/a...\|b.../` : pattern `a...` or `b...`  
 `[...]` : any characters in `[...]`  
-`/[...]\|.../` : any characters in `[...]` or pattern `...`  
 `[^...]` : `[^` not any characters in `...]`  
 `[^ ]*` : `*` zero or more characters that `^` are not space  
 
-`\s` : space or tab 
-`\t` : tab  
-`\n` : new line  
-
 `^...` `^[...]` : start with  
 `...$` `[...]$` : end with  
+
+`/a...\|b.../` : pattern `a...` or `b...`  
+`/[...]\|.../` : any characters in `[...]` or pattern `...`  
+`[^...\{...\}]$` : `[^` not `$` end with any characters in `[...` or pattern in `\{...\}`
+
+`\s` : space or tab 
+`\t` : tab  
+`\n` : new line    
 
 `a\ ...` : append line  
 `i\ ...` : insert(prepend) line  
