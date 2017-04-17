@@ -28,6 +28,7 @@ sed
 `\+` : 1 or more of preceding character  
 `*` : 0 or more of preceding character  
 
+`/a...\|b.../` : pattern `a...` or `b...`  
 `[...]` : any characters in `[...]`  
 `[...\{...\}]` : any characters in `[...` or pattern in `\{...\}]`  
 `[^...]` : `[^` not any characters in `...]`  
