@@ -24,6 +24,10 @@ sed
 
 `.` : single character wildcard  
 `.*` : multiple character wildcard  
+`\?` : 0 or 1 of preceding character  
+`\+` : 1 or more of preceding character  
+`*` : 0 or more of preceding character  
+
 `[...]` : any characters in `[...]`  
 `[...\{...\}]` : any characters in `[...` or pattern in `\{...\}]`  
 `[^...]` : `[^` not any characters in `...]`  
