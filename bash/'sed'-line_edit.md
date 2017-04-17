@@ -36,7 +36,6 @@ sed
 `\s` : space or tab 
 `\t` : tab  
 `\n` : new line  
-`\+` : multiple characters  
 
 `^...` `^[...]` : start with  
 `...$` `[...]$` : end with  
