@@ -40,7 +40,7 @@ sed
 `[^...\{...\}]$` : `[^` not `$` end with any characters in `[...` or pattern in `\{...\}`
 
 `\s` : space or tab 
-`\t` : tab  
+`\t` : tab (GNU sed only)  
 `\n` : new line    
 
 `a\ ...` : append line  
