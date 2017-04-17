@@ -30,7 +30,7 @@ sed
 
 `/a...\|b.../` : pattern `a...` or `b...`  
 `[...]` : any characters in `[...]`  
-`[...\{...\}]` : any characters in `[...` or pattern in `\{...\}]`  
+`/[...]\|.../` : any characters in `[...]` or pattern `...`  
 `[^...]` : `[^` not any characters in `...]`  
 `[^ ]*` : `*` zero or more characters that `^` are not space  
 
