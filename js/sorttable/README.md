@@ -11,7 +11,7 @@ a jquery plugin for `table` with `thead` and `tbody`
 $('tableid').sortTable(); 	// without options
 
 $('tableid').sortTable({
-	locale: 'code',					// default: 'en' - locale code
+	locale: 'code',		// default: 'en' - locale code
 	divAboveTable: 'divid'	// default: (none) - div above table, enclosed in single div
 });
 ```
