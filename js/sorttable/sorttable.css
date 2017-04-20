@@ -28,16 +28,17 @@
 
 
 /* do NOT change below this line */
-.sorttable thead, #tblth2 {
+.sorttable thead, .sorttableth2 {
 	cursor: pointer;
 	user-select: none;
 }
-#tblth2 {
+.sorttableth2 {
 	position: fixed;
 	width: 100%;
 	z-index: 1 !important; /* fix: overruled by scroll */
+/*	-webkit-transform: translate3d(0,0,0); *//* fix 'z-index' on iOS */
 }
-#tblth2 a {
+.sorttableth2 a {
 	display: inline-block;
 }
 .sorttable thead {
