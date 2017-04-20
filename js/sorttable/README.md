@@ -1,4 +1,4 @@
-sorttable.js 
+sortTable.js 
 ---
 a jquery plugin for `table` with `thead` and `tbody`
 - sortable
