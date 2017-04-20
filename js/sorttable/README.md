@@ -8,7 +8,7 @@ a jquery plugin for `table` with `thead` and `tbody`
   
 **usage:**  
 ```html
-<link  href="/path/sorttable.css" rel="stylesheet">
+<link rel="stylesheet" href="/path/sorttable.css">
 ...
 <script src="/path/sorttable.js"></script>
 ...
