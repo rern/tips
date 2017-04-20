@@ -1,9 +1,25 @@
 /* *** sorttable by rern ***
-	fixed header, scrollable body, screen rotate responsive
-*/
+
+/* fixed header, scrollable body, screen rotate responsive */
+
+/* custom >> */
+.sorttable thead, #tblth2 {
+	line-height: 40px;
+	background: #effbf8;
+	border-bottom: 1px solid #eee;
+}
+.sorttable tbody {
+	background: #fff;
+}
+.sorttable tr {
+	height: 30px;
+}
+.sorttable td {
+	padding: 0 0 0 5px;
+}
+/* << custom */
+
 .sorttable {
-	display: flex;
-	flex-direction: column;
 	margin: 0 auto;
 	border-collapse: collapse;
 	border-style: none;
@@ -12,13 +28,21 @@
 	padding: 0;
 	white-space: nowrap;
 }
-.sorttable thead {
-	height: 40px;
-	line-height: 40px;
-	background: #EFFBF8;
-	border-bottom: 1px solid #eee;
+#tblth2 {
+	position: fixed;
+	width: 100%;
+	z-index: 1 !important; /* fix: overruled by scroll */
+/*	-webkit-transform: translate3d(0,0,0); *//* fix 'z-index' on iOS */
+}
+#tblth2 a {
+	display: inline-block;
+}
+.sorttable thead, #tblth2 {
 	cursor: pointer;
 	user-select: none;
+}
+.sorttable thead {
+	visibility: hidden;
 }
 .sorttable thead td:empty {
 	pointer-events: none;
@@ -27,11 +51,17 @@
 	overflow: auto;
 	-webkit-overflow-scrolling: touch; /* ios momentum scroll */
 }
+.sorttable tbody tr:nth-child(even) { /* zebra stripe */
+	background: #f0f0f0;
+}
 .sorttable td {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0 0 0 5px;
-	height: 30px;
+	/* 3 ellipsis lines with 'td' width: / max-width: */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.sorttable .pad {
+	width: 1000px; /* oversize forces centering table */
 }
 .asc:after {
 	content: '\200a\25b2';
@@ -41,7 +71,3 @@
 	content: '\200a\25bc';
 	color: crimson;
 }
-.zebra {
-	background: #f0f0f0 !important;
-}
-
