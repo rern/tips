@@ -1,17 +1,21 @@
 sorttable.js 
 ---
-a jquery function + css for `table` with `thead` and `tbody`  
+a jquery plugin for `table` with `thead` and `tbody`
+- sortable
 - fixed header
 - scrollable body
 - screen rotate responsive  
   
-**usage:**  
+**usage:**    
 ```js
-sorttable('#tableid' [, nonTableH , 'locale']); 
- ```
-`'#tableid'` table id with `#`  
-`nonTableH` sum height of all elements other than `'#tableid'` (the table will fill all of available height)  
-`'nonTableH'` default `0`  
-`'locale'` default `'en'`  
+	$('tableid').sortTable(); 	// without options
+	
+	$('tableid').sortTable({
+		locale: 'code',					// default: 'en' - locale code
+		divAboveTable: 'divid'	// default: (none) - div above table, enclosed in single div
+	});
+```
+**custom css for table:**  
+  edit in `sorttable.css`    
   
 [**locale code**](https://r12a.github.io/app-subtags/)
