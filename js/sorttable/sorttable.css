@@ -3,6 +3,13 @@
 /* fixed header, scrollable body, screen rotate responsive */
 
 /* custom >> */
+.sorttable {
+	border-collapse: collapse;
+	border-style: none;
+	border-width: 0;
+	border-spacing: 0;
+	padding: 0;
+}
 .sorttable thead, #tblth2 {
 	line-height: 40px;
 	background: #effbf8;
@@ -19,26 +26,19 @@
 }
 /* << custom */
 
-.sorttable {
-	border-collapse: collapse;
-	border-style: none;
-	border-width: 0;
-	border-spacing: 0;
-	padding: 0;
-	white-space: nowrap;
+
+/* do NOT change below this line */
+.sorttable thead, #tblth2 {
+	cursor: pointer;
+	user-select: none;
 }
 #tblth2 {
 	position: fixed;
 	width: 100%;
 	z-index: 1 !important; /* fix: overruled by scroll */
-/*	-webkit-transform: translate3d(0,0,0); *//* fix 'z-index' on iOS */
 }
 #tblth2 a {
 	display: inline-block;
-}
-.sorttable thead, #tblth2 {
-	cursor: pointer;
-	user-select: none;
 }
 .sorttable thead {
 	visibility: hidden;
