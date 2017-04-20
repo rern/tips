@@ -8,16 +8,9 @@ a jquery plugin for `table` with `thead` and `tbody`
   
 **usage:**  
 ```html
-...
 <link  href="/path/sorttable.css" rel="stylesheet">
-</head>
-
 ...
-
 <script src="/path/sorttable.js"></script>
-</body>
-```
-```js
 ...
 $('tableid').sortTable(); 	// without options
 
@@ -25,7 +18,6 @@ $('tableid').sortTable({
 	locale: 'code',		// default: 'en' - locale code
 	divAboveTable: 'divid'	// default: (none) - div above table, enclosed in single div
 });
-</script>
 ```
 **custom css for table:**  
   edit in `sorttable.css`    
