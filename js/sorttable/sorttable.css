@@ -44,7 +44,6 @@ body {
 	position: fixed;
 	width: 100%;
 	z-index: 1;
-/*	-webkit-transform: translate3d(0,0,0); *//* fix 'z-index' on iOS */
 }
 .sorttableth2 a {
 	display: inline-block;
