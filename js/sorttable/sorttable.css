@@ -32,6 +32,10 @@
 
 
 /* do NOT change below this line */
+body {
+	width: 100% !important;
+}
+
 .sorttable thead, .sorttableth2 {
 	cursor: pointer;
 	user-select: none;
