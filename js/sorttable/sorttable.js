@@ -65,7 +65,7 @@ $.fn.sortTable = function(options) {
 		'}\n'+
 		'.sorttableth2 {top: '+ abovetblH +'px;}\n'+
 		'.sorttableth2 a {padding: '+ tdpadding +';}\n'+
-		'@media(max-height: '+ (shortvport - 1) +'px) {'+
+		'@media(max-height: '+ shortvport +'px) {'+
 			settings.divAboveTable +' {position: relative;}'+
 			'.sorttableth2 {top: 0; z-index: -1;}'+
 			'.sorttable thead {visibility: visible;}'+
