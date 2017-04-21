@@ -19,7 +19,12 @@
 }
 .sorttable tr {
 	height: 30px;
+	cursor: default;
 }
+.sorttable tbody tr:hover{
+	background: #d0d0d0 !important;
+}
+
 .sorttable td {
 	padding: 0 0 0 5px;
 }
