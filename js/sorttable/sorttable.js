@@ -1,14 +1,14 @@
-// *** sorttable.js by rern ***
+// *** sorttable.js ***
+
+// https://github.com/rern/tips/tree/master/js/sorttable
 
 /* 
-fixed header, scrollable body, screen rotate responsive
-
 usage: 
 	$('tableid').sortTable(); 	// without options
 	
 	$('tableid').sortTable({
 		divAboveTable: 'divid',	// default: (none) - div above table, enclosed in single div
-		locale: 'code'					// default: 'en' - locale code
+		locale: 'code'			// default: 'en' - locale code
 	});
 	
 custom css for table: 
@@ -81,7 +81,7 @@ $.fn.sortTable = function(options) {
 			$thead.children().children().each(function(i) {
 				$thead2a.eq(i).css('width', $(this).outerWidth() +'px'); // include 'td' padding
 			});
-			$thead2.show();
+			$thead2.css('z-index', 1).show();
 		}, th2aligntimeout);
 	}
 	
@@ -174,7 +174,6 @@ $.fn.sortTable = function(options) {
 		if ($window.height() < shortvport) {
 			var scrltop0 = scrltop + abovetblH;
 			fromshortv = 1;
-			$thead2.css('z-index', 1);
 		} else {
 			var scrltop0 = scrltop - (fromshortv ? abovetblH : 0); // calc if from short viewport
 			fromshortv = 0;
