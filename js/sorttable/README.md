@@ -1,11 +1,13 @@
 sortTable.js 
 ---
 a jquery plugin for `table` with `thead` and `tbody`
-- sortable
+- sortable row
 - fixed header
 - scrollable body
 - maintain scroll position on screen rotate
-- screen rotate responsive  
+- align center table
+- screen rotate responsive 
+- zebra stripe row
   
 **usage:**  
 ```html
