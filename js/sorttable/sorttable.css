@@ -10,8 +10,7 @@
 }
 .sorttable thead, .sorttableth2 {
 	line-height: 40px;
-	background: #effbf8;
-	border-bottom: 1px solid #eee;
+	background: #aaa;
 }
 .sorttable tbody {
 	background: #fff;
