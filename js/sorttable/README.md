@@ -1,6 +1,7 @@
 sorttable.js 
 ---
-a jquery plugin for `table` with `thead` and `tbody`
+a jquery plugin for `table` with `thead` and `tbody`  
+- เรียงลำดับภาษาไทยได้  
 - sortable row
 - fixed header
 - scrollable body
