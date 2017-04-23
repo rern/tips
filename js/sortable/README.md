@@ -18,22 +18,28 @@ a jquery plugin for `table` with `thead` and `tbody`
 </head>
 <body>
 
-<div id="divid">
-	(divBeforeTable html)
-</div>
-<table id="tableid">
-	<thead><tr><td></td></tr></thead>
-	<tbody><tr><td></td></tr></tbody>
-</table>
+	<div id="divbeforeid"> <!-- optional -->
+		(divBeforeTable html)
+	</div>
+
+	<table id="tableid">
+		<thead><tr><td></td></tr></thead>
+		<tbody><tr><td></td></tr></tbody>
+	</table>
+
+	<div id="divafterid"> <!-- optional -->
+		(divAfterTable html)
+	</div>
 
 <script src="/path/jquery.min.js"></script>
 <script src="/path/sortable.js"></script>
 <script>
 ...
-$('tableid').sortable(); 	// without options
+$('tableid').sortable(); 	// without options > full page table
 // or
 $('tableid').sortable({
-	divAboveTable: 'divid',	// default: (none) - div above table, enclosed in single div
+	divBeforeTable: 'divbeforeid',	// default: (none) - div before table, enclosed in single div
+	divAfterTable: 'divafterid',	// default: (none) - div after table, enclosed in single div
 	locale: 'code'		// default: 'en' - locale code
 });
 ...
