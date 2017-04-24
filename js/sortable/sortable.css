@@ -13,7 +13,8 @@
 	border-width: 0;
 	border-spacing: 0;
 }
-.sortable thead, .sortableth2 {
+.sortable thead,
+.sortableth2 {
 	line-height: 40px;
 	background: #effbf8;
 }
@@ -22,7 +23,8 @@
 		0px 5px 5px rgba(0,0,0,0.5);
 	opacity: 0.95;
 }
-.sortable thead th, .sortable thead td {
+.sortable thead th,
+.sortable thead td {
 	box-shadow: 0px 9px 5px -6px rgba(0,0,0,0.1) inset;
 	border-bottom: 1px solid #eee;
 }
@@ -43,9 +45,10 @@
 .sortable tbody tr:hover {
 	background: #d0d0d0;
 }
-.sortable th, .sortable td {
-	padding: 0 0 0 5px;
-	/* 3 ellipsis lines: 'td' must has 'width' or 'max-width' */
+.sortable th,
+.sortable td {
+	padding: 0 3px;
+	/* 3 lines for ellipsis: 'td max-width' must be set */
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -53,13 +56,20 @@
 .sorted {
 	background: rgba(0,0,0,0.05);
 }
+.asc:after {
+	color: green;
+}
+.desc:after {
+	color: crimson;
+}
 
 .divafter { /* 'divAfterTable' */
 	box-shadow: 0px -5px 5px rgba(0,0,0,0.5);
 }
 
 @media(min-height: 415px) {
-	.sortable thead th, .sortable thead td {
+	.sortable thead th,
+	.sortable thead td {
 		border: 0;
 	}
 }
@@ -69,7 +79,13 @@
 body {
 	width: 100% !important;
 }
-.sortable thead, .sortableth2 {
+.divbefore,
+.divafter {
+	position: fixed;
+	z-index: 10;
+}
+.sortable thead,
+.sortableth2 {
 	cursor: pointer;
 	user-select: none;
 }
@@ -84,7 +100,8 @@ body {
 .sortable thead {
 	visibility: hidden;
 }
-.sortable thead th:empty, .sortable thead td:empty {
+.sortable thead th:empty,
+.sortable thead td:empty {
 	pointer-events: none;
 }
 .sortable tbody {
@@ -96,9 +113,7 @@ body {
 }
 .asc:after {
 	content: '\200a\25b2';
-	color: green;
 }
 .desc:after {
 	content: '\200a\25bc';
-	color: crimson;
 }
