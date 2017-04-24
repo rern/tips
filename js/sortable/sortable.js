@@ -31,7 +31,9 @@ $('tableid').sortable(); 	// without options > full page table
 $('tableid').sortable({
 	divBeforeTable: 'divbeforeid',	// default: (none) - div before table, enclosed in single div
 	divAfterTable: 'divafterid',	// default: (none) - div after table, enclosed in single div
-	locale: 'code'		// default: 'en' - locale code
+	initialSort: 'column#',		// default: (none) - start with 0
+	locale: 'code',		// default: 'en' - locale code
+	minusColumn: [column#]	// default: (none) - column with 'minus' value
 });
 ...
 
@@ -46,8 +48,12 @@ $.fn.sortable = function(options) {
 var settings = $.extend({ // defaults
 	divBeforeTable: '',
 	divAfterTable: '',
-	locale: 'en'
+	initialSort: '',
+	locale: 'en',
+	minusColumn: []
 }, options );
+var initialsort = settings.initialSort;
+var minuscolumn = settings.minusColumn;
 
 var shortvport = 415; // min height to apply fixed thead
 var initscrolltimeout = 300; // all 'setTimeout()' are crucial, less will break header and scroll position
@@ -63,49 +69,64 @@ var $tbtr = $tbody.find('tr');
 
 var tblid = this[0].id;
 var tblparent = '#sortable'+ tblid;
-var divbefore = '#'+ settings.divBeforeTable;
-var divafter = '#'+ settings.divAfterTable;
-var divbeforeH = settings.divBeforeTable ? $(divbefore).outerHeight() : 0;
-var divafterH = settings.divAfterTable ? $(divafter).outerHeight() : 0;
+if (settings.divBeforeTable) {
+	var divbefore = '#'+ settings.divBeforeTable;
+	var divbeforeH = settings.divBeforeTable ? $(divbefore).outerHeight() : 0;
+	$(divbefore).addClass('divbefore');
+}
+if (settings.divAfterTable) {
+	var divafter = '#'+ settings.divAfterTable;
+	var divafterH = settings.divAfterTable ? $(divafter).outerHeight() : 0;
+	$(divafter).addClass('divafter');
+}
 
 // convert 'tbody' to value-only array [ [i, 'a', 'b', 'c'], [i, 'd', 'e', 'f'] ]
 var arr = [];
 $tbtr.each(function(i) {
 	var tdarr = [i];
 	$(this).find('td').each(function(j) {
-		tdarr.push( $thtd.eq(j).text() == '' ? '' : $(this).text() ); // blank header not sortable
+		if (minuscolumn.indexOf(j) === -1) {
+			var tdtxt = $(this).text();
+		} else { // minus value in column
+			var tdtxt = $(this).text().replace(/[^0-9\.\-]/g, '') // get only '0-9', '.' and '-'
+		}
+		tdarr.push( $thtd.eq(j).text() == '' ? '' : tdtxt ); // blank header not sortable
+		
+		// add '+20' space for sort icon
+		if (i === 0 && $thtd.eq(j).text() !== '') {
+			$(this).css('min-width', ($(this).outerWidth() + 20) +'px'); // 'i === 0' - only 1 row needed
+		}
 	});
 	arr.push(tdarr);
 });
 
-$table.wrap('<div id="sortable'+ tblid +'"></div>');
+$table.wrap('<div id="sortable'+ tblid +'" class="tblparent"></div>');
 $table.addClass('sortable');
-$(divbefore).addClass('divbefore');
-// dynamic css - for divbeforeH underlay and fixed thead2
+// dynamic css - for divbeforeH underlay, divafterH and fixed thead2
+var trH = $tbtr.height();
 $('head').append('<style>'+
-	tblparent +'::before {'+
+	'.tblparent::before {'+
 		'content: "";'+
 		'display: block;'+
 		'height: '+ (divbeforeH + 5) +'px;'+ // +5px offset 1st row
 	'}\n'+
-	'@media(max-height: '+ shortvport +'px) {'+
-		tblparent +'::before {display: block; height: 0;}'+
-	'}\n'+
-	
 	'.sortableth2 {top: '+ divbeforeH +'px;}\n'+
 	'.sortableth2 a {padding: '+ $table.find('td').css('padding') +';}\n'+
-	'@media(max-height: '+ shortvport +'px) {'+
-		divbefore +' {position: relative;}'+
+	'#trlast {height: '+ (divafterH + trH) +'px;}'+
+	'@media(max-height: '+ shortvport +'px) {\n'+
+		'.divbefore, .divafter {position: relative;}'+
+		'.tblparent::before {display: block; height: 0;}'+
 		'.sortableth2 {top: 0;}'+
 		'.sortable thead {visibility: visible;}'+
+		'#trlast {height: '+ trH +'px;}'+
 	'}'+
 	'</style>'
 );
 
 // #1 - functions
-// align 'thead td, sortableth2 a' to 'tbody td' + zebra
+// align 'sortableth2 a' width to 'thead th'
 function thead2align() {
-	setTimeout(function() { // wait rendering
+	setTimeout(function() { // wait rendering	
 		$thead.children().children().each(function(i) {
 			$thead2a.eq(i).css('width', $(this).outerWidth() +'px'); // include 'td' padding
 		});
@@ -125,8 +146,12 @@ $('body').prepend('\
 );
 var $thead2 = $('#'+ tblid +'th2');
 var $thead2a = $thead2.find('a');
+// align text to 'thead th'
+$thead.children().children().each(function(i) {
+	$thead2a.eq(i).css( 'text-align', $(this).css('text-align') );
+});
 // delegate click to 'thead'
-$thead2.delegate('a', 'click', function() {
+$thead2.find('a').click(function() {
 	$thead.children().children().eq( $(this).index() )
 		.click();
 });
@@ -142,17 +167,15 @@ $tbl.find('tr').each(function() {
 $(tblparent).append($tbl);
 
 // #4 - add empty 'tr' to bottom
-$tbody.append('<tr><td></td></tr>');
+$tbody.append(
+	$tbody.find('tr:last')
+		.clone()
+		.empty()
+		.prop('id', 'trlast')
+);
 
-// #5 - 'position fixed' divAfter to screen bottom
-if (divafterH) {
-	$(divafter)
-		.css({'position': 'fixed', 'bottom': 0})
-		.addClass('divafter');
-	$table.find('tr:last').css('height', ($tbtr.outerHeight() + divafterH) +'px');
-}
 
-// #6 - align 'thead2 a' to 'tbody td'
+// #6 - align 'sortableth2 a' width to 'thead th'
 thead2align();
 
 // #7 - scroll
@@ -167,18 +190,28 @@ $window.scroll(function () {
 // show top part on short viewport initial load
 setTimeout(function() {
 	$window.scrollTop(0);
+	initialsort && $thtd.eq(initialsort - 1).click();
 }, initscrolltimeout);
 
 // #8 - click 'thead' to sort
-$thead.delegate('td', 'click', function() {
+$thead.children().children().click(function() {
 	var i = $(this).index();
+	var numcol = minuscolumn.indexOf(i - 1); // '-1' - deduct 'tdpad' column
 	var order = $(this).hasClass('asc') ? 'desc' : 'asc';
 	// sort value-only array (multi-dimensional)
 	var sorted = arr.sort(function(a, b) {
 		if (order == 'desc') {
-			return a[i].localeCompare(b[i], settings.locale, {numeric: true});
+			if (numcol === -1) {
+				return a[i].localeCompare(b[i], settings.locale, {numeric: true});
+			} else {
+				return a[i] - b[i];
+			}
 		} else {
-			return b[i].localeCompare(a[i], settings.locale, {numeric: true});
+			if (numcol === -1) {
+				return b[i].localeCompare(a[i], settings.locale, {numeric: true});
+			} else {
+				return b[i] - a[i];
+			}
 		}
 	});
 	// sort 'tbody' in-place by each 'array[0]', reference i [ [i, 'a', 'b', 'c'], [i, 'd', 'e', 'f'] ]
