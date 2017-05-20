@@ -6,7 +6,7 @@ sed
 
 `s/` : substitute delimiter can be any symbol or character (single byte)  
 `$'...\'...\'...'` : `$` + escaped `'` inside single quote  
-`$'...\t...'` : `$` fix `\t` character result as `t`  
+`$'...\t...\n\r'` : `$` fix `\t` `\n` `\r` character result as `t` `n` `r`  
 `"...\"...\"..."` : escaped `"` inside double quote  
 `"...$var..."` : variable must be inside double quote  
 `'...'"$var"'...'` : double quoted variable inside single quote   
