@@ -14,6 +14,11 @@ grep -Po 'key3=\K[^ ]+' <<<'key1=value1 key2=value2 key3=value3 key4=value4'
 `\K` : discard matched part  
 `[^ ]+` : get value (limit with next space)  
 
+Get line
+```sh
+grep "text to find" file.ext
+```
+
 Get line number
 ```sh
 grep -n "text to find" file.ext | cut -f1 -d:
