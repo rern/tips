@@ -18,4 +18,6 @@ extract=${numstring//[^0-9.]/} # 1.23
 
 float=1.23
 extract=${float%.*}   # 1 (round down)
+
+awk '{print $4}' <<<'column1 column2 column3 column4' # column4
 ```
