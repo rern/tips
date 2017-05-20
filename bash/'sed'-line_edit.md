@@ -6,7 +6,6 @@ sed
 
 `s/` : substitute delimiter can be any symbol or character (single byte)  
 `$'...\'...\'...'` : `$` + escaped `'` inside single quote  
-`$'...\t...\n\r'` : `$` fix `\t` `\n` `\r` character result as `t` `n` `r`  
 `"...\"...\"..."` : escaped `"` inside double quote  
 `"...$var..."` : variable must be inside double quote  
 `'...'"$var"'...'` : double quoted variable inside single quote   
@@ -40,9 +39,11 @@ sed
 `/[...]\|.../` : any characters in `[...]` or pattern `...`  
 `[^...\{...\}]$` : `[^` not `$` end with any characters in `[...` or pattern in `\{...\}`
 
-`\s` : space or tab 
+`\s` : space or tab  
 `\t` : tab (GNU sed only)  
-`\n` : new line    
+`\n` : new line  
+`\r` : return  
+`$'...\t...\n\r'` : `$` fix `\t` `\n` `\r` character result as `t` `n` `r`  
 
 `a\ ...` : append line  
 `i\ ...` : insert(prepend) line  
