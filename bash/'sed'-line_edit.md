@@ -48,6 +48,7 @@ sed
 `a\ ...` : append line  
 `i\ ...` : insert(prepend) line  
 `/.../ d` : delete line  
+`n1, n2 d` : delete range of lines  
 `-n '/.../p'` : print line  
 `-n '/.../{=}'` : print line number  
 
