@@ -5,7 +5,6 @@ pip install redis-dump-load
 
 python
 >>> import redisdl
-data=open('data.json', 'w')
-redisdl.dump(data)
-# output: data.json
+>>> redisdl.dump( open('data.json', 'w') )
+# output file: data.json
 ```
