@@ -1,5 +1,5 @@
 *Honeycomb
-; name must be tha same as file name (upper to lowercase allowed)
+; name must be tha same as file name (matched case not needed)
 
 ; part 1
 ; angle
