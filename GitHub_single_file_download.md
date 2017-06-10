@@ -1,4 +1,4 @@
-GitHub single file download from GitHub
+GitHub single file download
 ---
 **Web page:**  
 - open the file page  
