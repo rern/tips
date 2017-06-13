@@ -21,6 +21,8 @@ sed
 
 `s/a.../b.../` : substitute `a...` with `b...`  
 `s/a.../&b.../` : append `b...` to `a...`  
+`/^a.../ s/^/b.../` : prepend `b...` to the begining of line start with `a...`  
+`/^a.../ s/$/b.../` : append `b...` to the end of line start with `a...`  
 
 `.` : single character wildcard  
 `.*` : multiple character wildcard  
