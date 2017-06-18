@@ -7,6 +7,9 @@ mkfs.ext4 /dev/sda1
 # label
 e4label /dev/sda1 labelname
 
+# display info - Filesystem features: has_journal
+dumpe2fs /dev/sda1 | more
+
 # disable journal
 tune2fs -O ^has_journal /dev/sda1
 
