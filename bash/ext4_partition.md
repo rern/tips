@@ -1,7 +1,7 @@
 ext4 partiton
 ---
 
-**Speed**
+**USB <> hdd speed**  
 on Ubuntu - Nautilus  
 - USB3 hdd ext3 > hdd ntfs ≈ 35MB/s
 - hdd ntfs > USB3 hdd ext3 ≈ ?MB/s
