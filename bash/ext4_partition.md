@@ -2,11 +2,14 @@ ext4 partiton
 ---
 
 **Speed**
-on Nautilus Ubuntu  
+on Ubuntu - Nautilus  
 - USB3 hdd ext3 > hdd ntfs ≈ 35MB/s
 - hdd ntfs > USB3 hdd ext3 ≈ ?MB/s
 - USB3 hdd ext4 > hdd ntfs ≈ ?MB/s
 - hdd ntfs > USB3 hdd ext4 ≈ 70MB/s
+
+on Windows - [Linux Reader](https://www.diskinternals.com/linux-reader/)  
+- USB3 hdd ext4 > hdd ntfs ≈ 60MB/s
 
 **create partition**
 ```bash
