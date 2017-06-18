@@ -22,13 +22,13 @@ e2label /dev/sda1 labelname
 **improve transfer**
 ```bash
 # display 'has_journal'
-dumpe2fs /dev/sda1 | sed-n '/Filesystem features/p'
+dumpe2fs /dev/sda1 | grep 'Filesystem features'
 
 # disable journal
 tune2fs -O ^has_journal /dev/sda1
 
 # display 'noatime'
-
+mount | grep '/dev/sda1'
 
 # mount no access time
 mount /dev/sda1 /path -o noatime
