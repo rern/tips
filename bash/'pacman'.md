@@ -42,3 +42,7 @@ pacman -Rs package_file
 ```sh
 pacman -Syu
 ```
+
+**Package repo**  
+Latest - https://archlinuxarm.org/packages  
+Archive - http://tardis.tiny-vps.com/aarm/  
