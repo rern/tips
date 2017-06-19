@@ -28,6 +28,16 @@ pacman -Sw package
 pacman -U package_file
 ```
 
+**Uninstall**  
+```sh
+pacman -R package_file
+```
+
+**Uninstall with unused depends**  
+```sh
+pacman -Rs package_file
+```
+
 **System wide upgrade**  
 ```sh
 pacman -Syu
