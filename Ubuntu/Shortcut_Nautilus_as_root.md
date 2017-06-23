@@ -1,4 +1,4 @@
-File Browser (Nautilus) as root
+Shortcut - Nautilus as root
 ---
 
 ```sh
