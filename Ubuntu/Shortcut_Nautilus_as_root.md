@@ -5,6 +5,7 @@ Shortcut - Nautilus as root
 sudo apt update
 sudo apt install gksu
 
+sudo mkdir -p /root/.config/nautilus
 echo '
 [Desktop Entry]
 Name=File Browser as root
