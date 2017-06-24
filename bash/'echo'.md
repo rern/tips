@@ -1,6 +1,6 @@
 **echo**  
 
-`echo` : blank line
+`echo` : blank line  
 `echo $var` : var only  
 `echo "$var"` : var with spaces only  
 `echo abc` : string only  
