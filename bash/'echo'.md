@@ -21,6 +21,6 @@
     \t          horizontal tab
     \v          vertical tab
     \\          backslash
-    \NNN        the character whose ASCII code is NNN (octal); if NNN is not a valid octal number, it is printed literally.
+    \NNN        the character whose ASCII code is NNN (octal)
     \xnnn       the character whose ASCII code is the hexadecimal value nnn (one to three digits)
 ```
