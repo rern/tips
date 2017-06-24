@@ -13,7 +13,7 @@
 ```
     \a          alert (bell)  
     \b          backspace
-    \c          suppress trailing newline
+    \c          suppress trailing new line
     \e          escape 
     \f          form feed
     \n          new line
@@ -21,6 +21,6 @@
     \t          horizontal tab
     \v          vertical tab
     \\          backslash
-    \NNN        the character whose ASCII code is NNN (octal)
-    \xnnn       the character whose ASCII code is the hexadecimal value nnn (one to three digits)
+    \NNN        character - ASCII code in octal
+    \xnnn       character - ASCII code in hexadecimal
 ```
