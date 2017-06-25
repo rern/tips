@@ -12,3 +12,17 @@ Comparison
 `(( $a >= $b ))`  
 `(( $a < $b ))`  
 `(( $a <= $b ))`  
+
+**String**  
+`[[ $a == $b ]]`  
+`[[ $a != $b ]]`  
+`[[ $a > $b ]]`  
+`[[ $a < $b ]]`  
+`[[ -z $a ]]` : null / zero length  
+`[[ -n $a ]]` : not null  
+
+**File**  
+`[[ -e file ]]` : exist  
+`[[ -f file ]]` : 'file' exist  
+`[[ -d file ]]` : 'directory' exist  
+`[[ -L file ]]` : 'link' exist  
