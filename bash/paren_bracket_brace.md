@@ -1,7 +1,7 @@
 parentheses, brackets, curly braces
 ---
 
-reference: [here](https://stackoverflow.com/a/2188223)  
+[refered from here](https://stackoverflow.com/a/2188223)  
 
 
 1. A single bracket `[` usually actually calls a program named `[`; `man test` or `man [` for more info. 
