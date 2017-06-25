@@ -22,7 +22,7 @@ Comparison
 `[[ -n $a ]]` : not null  
 
 **File**  
-`[[ -e file ]]` : exist  
+`[[ -e filedirlink ]]` : exist  
 `[[ -f file ]]` : 'file' exist  
-`[[ -d file ]]` : 'directory' exist  
-`[[ -L file ]]` : 'link' exist  
+`[[ -d directory ]]` : 'directory' exist  
+`[[ -L link ]]` : 'link' exist  
