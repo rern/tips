@@ -27,9 +27,9 @@ $ (cd /tmp; pwd)
 $ pwd
 /home/user
 ```
-
-As you can see, the subshell allowed you to perform operations without affecting the environment of the current shell.
-4a. Braces ({}) are used to unambiguously identify variables.
+The subshell allowed performing operations without affecting the environment of the current shell.  
+  
+4a. Braces `{}` are used to unambiguously identify variables.
 ```
     $ VARIABLE=abcdef
     $ echo Variable: $VARIABLE
