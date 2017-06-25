@@ -20,6 +20,7 @@ sed
 `$ a\\...` : last line append  
 
 `s/a.../b.../` : substitute `a...` with `b...`  
+    or `var="abcde"; echo ${var/de/12}`   
 `s/a.../&b.../` : append `b...` to `a...`  
 `/^a.../ s/^/b.../` : prepend `b...` to the begining of line start with `a...`  
 `/^a.../ s/$/b.../` : append `b...` to the end of line start with `a...`  
