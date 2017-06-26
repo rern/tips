@@ -24,3 +24,5 @@
     \NNN        character - ASCII code in octal
     \xnnn       character - ASCII code in hexadecimal
 ```
+`echo abc > file` : create new file with 'abc' string content  
+`echo abc >> file` : append file with 'abc' string  
