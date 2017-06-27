@@ -1,5 +1,5 @@
 **integer** or **string** or **file**  
-`[[ ... ... ]]` (with spaces)  
+`[[ ... ... ]]` (`[` or `[[` are commands so they must be followed by a white space)  
 
 integer  
 `-eq` equal  
