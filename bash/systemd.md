@@ -15,20 +15,20 @@ systemctl cat unit
 ```
 
 **override some value**  
-reload automatically
+reload automatically on save
 ```sh
-# drop-in file (partial): /etc/systemd/system/unit.d/override.conf
+# drop-in file (partial) as /etc/systemd/system/unit.d/override.conf
 systemctl edit unit
 
-# override file : /etc/systemd/system/unit.service
+# override file as /etc/systemd/system/unit.service
 systemctl edit --full unit
 
 # revert back
 systemctl revert unit
 ```
 
-**manual edit**
+**override with new file**
+```sh
 cp /lib/systemd/system/unit.service /etc/systemd/system
-nano /lib/systemd/system/unit.service
 systemctl daemon-reload
 ```
