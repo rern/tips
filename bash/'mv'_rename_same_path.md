@@ -1,9 +1,11 @@
 `mv` rename same path
 ---
-
+with brace expansion
 ```sh
 # /path/filename.ext
 
-mv /path/filename.{ext,new}     # filename.new
-mv /path/file{name.n,x.x}ew     # filex.xew
+mv /path/filename.{ext,new}      # filename.new
+mv /path/filename.new{,.bak}     # filename.new.bak
+mv /path/filename.new.bak{.bak,} # filename.new
+mv /path/file{name.n,xx.xx}ew     # filexx.xxew
 ```
