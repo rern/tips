@@ -36,10 +36,14 @@ systemctl daemon-reload
 **environment and commands before, after**  
 `file.service`  
 ```sh
+...
+[Service]
+...
 Environment=<VAR=value>
 ExecStartPre=<command1>
 ExecStartPre=<command2>
 ExecStart=<command>      # allow only 1 command
 ExecStartPost=<command3>
 ExecStartPost=<command4>
+...
 ```
