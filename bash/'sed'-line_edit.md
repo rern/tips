@@ -7,8 +7,7 @@ sed
 `s/` : substitute delimiter can be any symbol or character (single byte)  
 `$'...\'...\'...'` : `$` + escaped `'` inside single quote  
 `"...\"...\"..."` : escaped `"` inside double quote  
-`"...$var..."` : variable must be inside double quote  
-`'...'"$var"'...'` : double quoted variable inside single quote   
+`'...'$var'...'` : variable outside quotes   
 
 `\|...|` : line search (left one only escaped delimiter other than `/`)  
 `/1st.../, /last.../` : line range search  
@@ -20,6 +19,7 @@ sed
 `$ a\\...` : last line append  
 
 `s/a.../b.../` : substitute `a...` with `b...`  
+alternative brace expansion  
 - `var="abcde"; echo ${var/de/12}` : abc12 (substitute)  
 - `var="abcde"; echo ${var%d*}` : abc (truncate)  
 
