@@ -1,6 +1,8 @@
 Comparison
 ---
+`[[ ... ]]` and `(( ... ))` are BASH specific
 `[[ ... ]]` needs white spaces  
+`(( ... ))` with or without white spaces  
 
 **Logic**  
 `(( 0 ))` : false / exit 1  
@@ -15,8 +17,8 @@ Comparison
 `[[ -n $a ]]` : not null 
 
 **Integer**  
-`[[ $a -eq $b ]]`  
-`[[ $a -ne $b ]]`  
+`[[ $a -eq $b ]]` or `(( $a == $b ))` ( but `(( $a = $b ))` set variable )  
+`[[ $a -ne $b ]]` or `(( $a != $b ))`  
 `[[ $a -gt $b ]]` or `(( $a > $b ))`  
 `[[ $a -ge $b ]]` or `(( $a >= $b ))`  
 `[[ $a -lt $b ]]` or `(( $a < $b ))`  
