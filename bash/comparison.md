@@ -1,6 +1,6 @@
 Comparison
 ---
-`[[ ... ]]` and `(( ... ))` are BASH specific
+`[[ ... ]]` and `(( ... ))` are BASH specific  
 `[[ ... ]]` needs white spaces  
 `(( ... ))` with or without white spaces  
 
