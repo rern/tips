@@ -1,17 +1,20 @@
 **integer** or **string** or **file**  
 `[[ ... ... ]]` (`[` or `[[` are commands so they must be followed by a white space)  
+`((... ...))` (with or without spaces)  
 
-integer  
+integer `[[ ... ... ]]`  
 `-eq` equal  
 `-ne` not equal  
-`<` less than  
-`>`	greater than  
-`<=` less than or equal  
-`>=` greater than or equal  
+`-lt` less than  
+`-gt`	greater than  
+`-le` less than or equal  
+`-ge` greater than or equal  
 
-string  
+string `[[ ... ... ]]`  
 `=` equal  
 `!=` not equal  
+`<` less than  
+`>`	greater than  
 `-z` null (zero length)  
 `-n` not null  
 
