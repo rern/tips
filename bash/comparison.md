@@ -9,7 +9,7 @@ Comparison
 `(( 1 ))` : true / exit 0  
 
 **String**  
-`[[ $a = $b ]]`  
+`[[ $a == $b ]]` or `[[ $a = $b ]]`  
 `[[ $a != $b ]]`  
 `[[ $a > $b ]]`  
 `[[ $a < $b ]]`  
