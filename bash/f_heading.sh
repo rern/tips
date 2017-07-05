@@ -29,7 +29,7 @@ textcolor() {
 
 line2=$( linecolor = 6 )
 line=$( linecolor - 6 )
-linered=$( plinecolor - 1 )
+linered=$( linecolor - 1 )
 bar=$( textcolor '   ' 7 6 )
 info=$( textcolor ' i ' 0 6 )
 warn=$( textcolor ' ! ' 7 1 )
