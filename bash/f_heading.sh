@@ -27,12 +27,12 @@ textcolor() {
 	echo $(tput setaf "$fg"; tput setab "$bg")"$1"$(tput setaf 7; tput setab 0)
 }
 
-line2=$( linecolor = 6 )
-line=$( linecolor - 6 )
-linered=$( linecolor - 1 )
-bar=$( textcolor '   ' 7 6 )
-info=$( textcolor ' i ' 0 6 )
-warn=$( textcolor ' ! ' 7 1 )
+line2=$( linecolor = 6 )       # =         (cyan)
+line=$( linecolor - 6 )        # -         (cyan)
+linered=$( linecolor - 1 )     # -         (red)
+bar=$( textcolor '   ' 7 6 )   # [   ]     (cyan)
+info=$( textcolor ' i ' 0 6 )  # [ i ]     (black on cyan)
+warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (gray on red)
 
 # usage: title2 "<string>"
 # =============================================>> (width)
