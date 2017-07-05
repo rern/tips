@@ -32,3 +32,7 @@ errorend() {
 	echo -e "\n$warn $1"
 	echo $linered
 }
+textcolor() {
+	[[ $2 ]] && color=$2 || color=6
+	echo $(tput setab 0; tput setaf "$color")$1$(tput setab 0; tput setaf 7)
+}
