@@ -2,12 +2,35 @@
 
 # heading variables and functions
 
-line2=$( printf '\e[0;36m%*s\e[m\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' = )
-line=$( printf '\e[0;36m%*s\e[m\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' - )
-linered=$( printf '\e[0;31m%*s\e[m\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' - )
-bar=$( echo -e "$(tput setab 6)   $(tput setab 0)" )
-info=$( echo $(tput setab 6; tput setaf 0) i $(tput setab 0; tput setaf 7) )
-warn=$( echo $(tput setab 1) ! $(tput setab 0) )
+# 0 - black
+# 1 - red
+# 2 - green
+# 3 - yellow
+# 4 - blue
+# 5 - magenta
+# 6 - cyan
+# 7 - gray
+
+linecolor() {
+	if [[ -n $2 || $2 > 6 ]]; then
+		color='%*s\n'
+	else
+		color='\e[0;3'$2'm%*s\e[m\n'
+	fi
+	printf $color "${COLUMNS:-$(tput cols)}" '' | tr ' ' $1
+}
+textcolor() {
+	[[ $2 ]] && fg=$2 || fg=7
+	[[ $3 ]] && bg=$3 || bg=0
+	echo $(tput setaf "$fg"; tput setab "$bg")"$1"$(tput setaf 7; tput setab 0)
+}
+
+line2=$( linecolor = 6 )
+line=$( linecolor - 6 )
+linered=$( plinecolor - 1 )
+bar=$( textcolor '   ' 7 6 )
+info=$( textcolor ' i ' 0 6 )
+warn=$( textcolor ' ! ' 7 1 )
 
 title2() {
 	echo $line2
@@ -31,10 +54,5 @@ error() {
 errorend() {
 	echo -e "\n$warn $1"
 	echo $linered
-}
-textcolor() {
-	[[ $2 ]] && fg=$2 || fg=6
-	[[ $3 ]] && bg=$3 || bg=0
-	echo $(tput setaf "$fg"; tput setab "$bg")"$1"$(tput setaf 7; tput setab 0)
 }
 
