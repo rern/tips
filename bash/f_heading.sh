@@ -13,7 +13,7 @@
 
 # usage: linecolor <string> [color]
 linecolor() {
-	if [[ -n $2 || $2 > 6 ]]; then
+	if [[ -z $2 ]] || (( $2 > 6 )); then
 		color='%*s\n'
 	else
 		color='\e[0;3'$2'm%*s\e[m\n'
