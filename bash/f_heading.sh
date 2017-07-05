@@ -11,6 +11,7 @@
 # 6 - cyan
 # 7 - gray (default)
 
+# usage: linecolor <string> [color]
 linecolor() {
 	if [[ -n $2 || $2 > 6 ]]; then
 		color='%*s\n'
@@ -19,6 +20,7 @@ linecolor() {
 	fi
 	printf $color "${COLUMNS:-$(tput cols)}" '' | tr ' ' $1
 }
+# usage: textcolor <string> [color] [background]
 textcolor() { 
 	[[ $2 ]] && fg=$2 || fg=7
 	[[ $3 ]] && bg=$3 || bg=0
