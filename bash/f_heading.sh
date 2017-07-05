@@ -18,7 +18,7 @@ linecolor() {
 	else
 		color='\e[0;3'$2'm%*s\e[m\n'
 	fi
-	printf $color "${COLUMNS:-$(tput cols)}" '' | tr ' ' $1
+	printf $color "${COLUMNS:-$(tput cols)}" '' | tr ' ' "$1"
 }
 # usage: textcolor <string> [color] [background]
 textcolor() { 
