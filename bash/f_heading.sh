@@ -35,20 +35,20 @@ info=$( textcolor ' i ' 0 6 )  # [ i ]     (black on cyan)
 warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (gray on red)
 
 # usage: title2 "<string>"
-# =============================================>> (width)
+# =============================================>> (fill width)
 #
 # [   ] string
 #
-# =============================================>> (width)
+# =============================================>> (fill width)
 title2() {
 	echo $line2
 	echo -e "$bar $1"
 	echo $line2
 }
 # usage: title "<string>"
-# -------------------------------------------->> (width)
+# -------------------------------------------->> (fill width)
 # string
-# -------------------------------------------->> (width)
+# -------------------------------------------->> (fill width)
 title() {
 	echo $line
 	echo -e "$1"
@@ -56,15 +56,15 @@ title() {
 }
 # usage: titleend "<string>"
 # string
-# -------------------------------------------->> (width)
+# -------------------------------------------->> (fill width)
 titleend() {
 	echo -e "\n$1"
 	echo $line
 }
 # usage: title "<string>"
-# (red) -------------------------------------->> (width)
+# (red) -------------------------------------->> (fill width)
 # [ ! ] string
-# (red) -------------------------------------->> (width)
+# (red) -------------------------------------->> (fill width)
 error() {
 	echo $linered
 	echo $warn $1
@@ -72,7 +72,7 @@ error() {
 }
 # usage: title "<string>"
 # string
-# (red) -------------------------------------->> (width)
+# (red) -------------------------------------->> (fill width)
 errorend() {
 	echo -e "\n$warn $1"
 	echo $linered
