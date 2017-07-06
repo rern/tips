@@ -36,9 +36,7 @@ warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (gray on red)
 
 # usage: title2 "<string>"
 # =============================================>> (fill width)
-#
 # [   ] string
-#
 # =============================================>> (fill width)
 title2() {
 	echo $line2
