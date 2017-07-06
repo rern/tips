@@ -2,6 +2,34 @@
 
 # heading variables and functions
 
+# usage:
+
+# title2 "<string>"
+# =============================================>> (fill width)
+# [   ] string
+# =============================================>> (fill width)
+
+# title "<string>"
+# -------------------------------------------->> (fill width)
+# string
+# -------------------------------------------->> (fill width)
+
+# titleend "<string>"
+# string
+# -------------------------------------------->> (fill width)
+
+# error "<string>"
+# (red) -------------------------------------->> (fill width)
+# [ ! ] string
+# (red) -------------------------------------->> (fill width)
+
+# errorend "<string>"
+# string
+# (red) -------------------------------------->> (fill width)
+
+# linecolor <character> [color]
+# textcolor <string> [color] [background]
+
 # 0 - black
 # 1 - red
 # 2 - green
@@ -11,7 +39,6 @@
 # 6 - cyan
 # 7 - gray (default)
 
-# usage: linecolor <string> [color]
 linecolor() {
 	if [[ -z $2 ]] || (( $2 > 6 )); then
 		color='%*s\n'
@@ -20,7 +47,6 @@ linecolor() {
 	fi
 	printf $color "${COLUMNS:-$(tput cols)}" '' | tr ' ' "$1"
 }
-# usage: textcolor <string> [color] [background]
 textcolor() { 
 	[[ $2 ]] && fg=$2 || fg=7
 	[[ $3 ]] && bg=$3 || bg=0
@@ -34,43 +60,25 @@ bar=$( textcolor '   ' 7 6 )   # [   ]     (cyan)
 info=$( textcolor ' i ' 0 6 )  # [ i ]     (black on cyan)
 warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (gray on red)
 
-# usage: title2 "<string>"
-# =============================================>> (fill width)
-# [   ] string
-# =============================================>> (fill width)
 title2() {
 	echo $line2
 	echo -e "$bar $1"
 	echo $line2
 }
-# usage: title "<string>"
-# -------------------------------------------->> (fill width)
-# string
-# -------------------------------------------->> (fill width)
 title() {
 	echo $line
 	echo -e "$1"
 	echo $line
 }
-# usage: titleend "<string>"
-# string
-# -------------------------------------------->> (fill width)
 titleend() {
 	echo -e "\n$1"
 	echo $line
 }
-# usage: title "<string>"
-# (red) -------------------------------------->> (fill width)
-# [ ! ] string
-# (red) -------------------------------------->> (fill width)
 error() {
 	echo $linered
 	echo $warn $1
 	echo $linered
 }
-# usage: title "<string>"
-# string
-# (red) -------------------------------------->> (fill width)
 errorend() {
 	echo -e "\n$warn $1"
 	echo $linered
