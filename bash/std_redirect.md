@@ -1,6 +1,6 @@
 **stdin, stdout, stderr**  
 
-`command1 | command2` : stdin pipe to `command2`  
+`command1 | command2` : stdout pipe to `command2`  
 `command > file` : stdout to `file`  
 `command 2> file` : stderr `2` to `file`  
 `command 2>&1` : stderr `2` to stdout `1`  
