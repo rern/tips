@@ -11,6 +11,13 @@ $(( n1 % n2 ))    # modulus
 $(( n1 ** n2 ))   # exponential
 $(( n++ ))        # increment
 $(( n-- ))        # decrement
+
+x=n
+let 'x += N'      # x=$(( n + N ))
+let 'x -= N'      # x=$(( n - N ))
+let 'x *= N'      # x=$(( n * N ))
+let 'x /= N'      # x=$(( n / N ))
+let 'x %= N'      # x=$(( n % N ))
 ```
 
 **Float**  
