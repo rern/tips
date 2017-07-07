@@ -4,6 +4,13 @@ Math
 **Integer**
 ```sh
 $(( n1 + n2 ))
+$(( n1 - n2 ))
+$(( n1 * n2 ))
+$(( n1 / n2 ))
+$(( n1 % n2 ))    # modulus
+$(( n1 ** n2 ))   # exponential
+$(( n++ ))        # increment
+$(( n-- ))        # decrement
 ```
 
 **Float**  
