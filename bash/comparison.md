@@ -1,8 +1,10 @@
 Comparison
 ---
-`[[ ... ]]` and `(( ... ))` are BASH specific  
-`[[ ... ]]` needs white spaces  
+
+`[[ ... ]]` needs white spaces (`[` or `[[` are commands) 
 `(( ... ))` with or without white spaces  
+
+(`[[ ... ]]` and `(( ... ))` are BASH specific)  
 
 **Logic**  
 `(( 0 ))` : false / exit 1  
