@@ -1,7 +1,7 @@
 **if**  
 
 ```sh
-# group
+# group ('[[' bash only)
 if [[ expression && expression || expression ]] ; then
 
 # sub group
