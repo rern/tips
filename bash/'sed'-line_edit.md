@@ -16,7 +16,7 @@ sed
 `1 i\\...` : 1st line prepend  
 `n i\\...` : #n line prepend  
 `n a\\...` : #n line append  
-`$ a\\...` : last line append  
+`"$ a\\..."` : last line append  
 
 `s/a.../b.../` : substitute `a...` with `b...`  
 alternative brace expansion  
