@@ -7,6 +7,7 @@ Example for `Kodi` database `Addons27.db` table `installed`
 `sqlite>` prompt  
 `...>` multiline prompt  
 `;` terminate multiline  
+`.` leading dot for sqlite commands  
 `.help` help  
 `.exit` / `quit` exit shell  
 ```sh
