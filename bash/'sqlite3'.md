@@ -53,7 +53,8 @@ sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed"
 # 161|script.skinshortcuts|1|2017-07-06 13:51:55|||
 ```
 
-**get row** `addonID` (TEXT `value` must be quoted)
+**get row** `addonID`  
+(TEXT `value` must be quoted)  
 ```sh
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed WHERE addonID = 'script.skinshortcuts'"
 # 161|script.skinshortcuts|1|2017-07-06 13:51:55|||
