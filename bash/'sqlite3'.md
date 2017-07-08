@@ -3,11 +3,10 @@ sqlite3 command line
 
 **Example** for `Kodi` database `Addons27.db` table `installed` addon `script.skinshortcuts`  
 
-`Kodi` addons installed with command line must be enabled and updated manually.  
+`Kodi` addons installed with command line must be updated database and enable manually.  
 ```sh
-sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
-xbmc-send -a "UpdateAddonRepos()"
 xbmc-send -a "UpdateLocalAddons()"
+sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
 xbmc-send -a "ReloadSkin()"
 ```
 
