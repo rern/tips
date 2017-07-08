@@ -32,7 +32,7 @@ sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db ".tables"
 # addons         broken         package        version
 ```
 
-**show columns structure**
+**show table structure**
 ```sh
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "PRAGMA table_info(installed)"
 # 0|id|INTEGER|0||1
@@ -44,7 +44,7 @@ sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "PRAGMA table_info(instal
 # 6|origin|TEXT|1|''|0
 ```
 
-**show all rows `*`**
+**show all rows** `*`
 ```sh
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed"
 # ...
@@ -53,13 +53,13 @@ sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed"
 # 161|script.skinshortcuts|1|2017-07-06 13:51:55|||
 ```
 
-**get row `addonID`** (TEXT `value` must be quoted)
+**get row** `addonID` (TEXT `value` must be quoted)
 ```sh
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed WHERE addonID = 'script.skinshortcuts'"
 # 161|script.skinshortcuts|1|2017-07-06 13:51:55|||
 ```
 
-**update column `enabled` in row `addonID`**
+**update column** `enabled` in row `addonID`
 ```sh
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.skinshortcuts'"
 #
