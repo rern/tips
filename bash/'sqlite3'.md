@@ -21,13 +21,20 @@ sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "PRAGMA table_info(instal
 # 5|lastUsed|TEXT|0||0
 # 6|origin|TEXT|1|''|0
 
-# show all row
+# show all rows
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed"
 # ...
 # 159|script.module.simplejson|1|2017-07-06 13:51:55|||
 # 160|script.module.unidecode|1|2017-07-06 13:51:55|||
 # 161|script.skinshortcuts|1|2017-07-06 13:51:55|||
 
-# show specific rows ('value' must be quoted)
+# get row 'addonID' ('value' must be quoted)
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed WHERE addonID = 'script.skinshortcuts'"
+# 161|script.skinshortcuts|1|2017-07-06 13:51:55|||
+
+# update column 'enabled' in row 'addonID'
+sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.skinshortcuts'"
+#
+# script.skinshortcuts' updated to:
+# 161|script.skinshortcuts|0|2017-07-06 13:51:55|||
 ```
