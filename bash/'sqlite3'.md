@@ -17,9 +17,10 @@ sqlite3
 # Use ".open FILENAME" to reopen on a persistent database.
 # sqlite>
 ```
+<hr>
 
-**syntax**
-"<query>" must be quoted
+**BASH syntax**  
+"\<query\>" must be quoted
 ```sh
 sqlite3 <db file> "<query>"
 ```
