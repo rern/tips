@@ -9,7 +9,7 @@ Example for `Kodi` database `Addons27.db` table `installed`
 `;` terminate multiline  
 `.` leading dot for sqlite commands  
 `.help` help  
-`.exit` / `quit` exit shell  
+`.exit` / `quit` / `Ctrl+D` exit shell  
 ```sh
 sqlite3
 # SQLite version 3.16.0 2017-01-02 11:57:58
