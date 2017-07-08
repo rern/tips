@@ -65,6 +65,11 @@ title2() {
 	echo -e "$bar $1"
 	echo $line2
 }
+titlebar() {
+	echo $line
+	echo -e "$bar $1"
+	echo $line
+}
 titleinfo() {
 	echo $line
 	echo -e "$info $1"
