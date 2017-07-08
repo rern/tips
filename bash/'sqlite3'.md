@@ -1,7 +1,22 @@
 sqlite3 CLI
 ---
 
-**Kodi addons**  
+Example for `Kodi` database `Addons27.db` table `installed`  
+
+**SQLite shell**   
+`sqlite>` prompt  
+`...>` multiline prompt  
+`;` terminate multiline  
+`.help` help  
+`.exit` / `quit` exit shell  
+```sh
+sqlite3
+# SQLite version 3.16.0 2017-01-02 11:57:58
+# Enter ".help" for usage hints.
+# Connected to a transient in-memory database.
+# Use ".open FILENAME" to reopen on a persistent database.
+# sqlite>
+```
 
 **syntax**
 "<query>" must be quoted
