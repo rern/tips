@@ -47,6 +47,6 @@ sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed 
 ```sh
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.skinshortcuts'"
 #
-# script.skinshortcuts' updated to:
+# 'enabled' of 'script.skinshortcuts' updated:
 # 161|script.skinshortcuts|0|2017-07-06 13:51:55|||
 ```
