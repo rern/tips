@@ -1,7 +1,8 @@
-sqlite3 CLI
+sqlite3 command line
 ---
 
-Example for `Kodi` database `Addons27.db` table `installed`  
+Example for `Kodi` database `Addons27.db` table `installed` addon `script.skinshortcuts`  
+(Kodi addons installed with command line must be enabled and updated manually.)  
 
 **SQLite shell**   
 `sqlite>` prompt  
@@ -49,22 +50,22 @@ sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "PRAGMA table_info(instal
 ```sh
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed"
 # ...
-# 159|script.module.simplejson|1|2017-07-06 13:51:55|||
-# 160|script.module.unidecode|1|2017-07-06 13:51:55|||
-# 161|script.skinshortcuts|1|2017-07-06 13:51:55|||
+# 159|script.module.simplejson|0|2017-07-06 13:51:55|||
+# 160|script.module.unidecode|0|2017-07-06 13:51:55|||
+# 161|script.skinshortcuts|0|2017-07-06 13:51:55|||
 ```
 
 **get row** `addonID`  
 (TEXT `value` must be quoted)  
 ```sh
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "SELECT * FROM installed WHERE addonID = 'script.skinshortcuts'"
-# 161|script.skinshortcuts|1|2017-07-06 13:51:55|||
+# 161|script.skinshortcuts|0|2017-07-06 13:51:55|||
 ```
 
 **update column** `enabled` in row `addonID`
 ```sh
-sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.skinshortcuts'"
+sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
 #
-# 'enabled' of 'script.skinshortcuts' updated:
-# 161|script.skinshortcuts|0|2017-07-06 13:51:55|||
+# 'enabled' updated:
+# 161|script.skinshortcuts|1|2017-07-06 13:51:55|||
 ```
