@@ -4,6 +4,6 @@
 `"$string"` > `value of variable` weak quoting  
 `'$string'` > `$string` strong quoting  
 
-**Escape character**
-`\\, \", \', \$ \(, \), \[, \], \#, \*, \|`
-`'&', '<', '>'`
+**Escape character**  
+`\\, \", \', \$ \(, \), \[, \], \#, \*, \|`  
+`'&', '<', '>'`  
