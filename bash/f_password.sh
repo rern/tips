@@ -3,7 +3,7 @@
 # password promt funtion
 # set password variable as '$pwd1'
 
-info=$( echo $(tput setab 6; tput setaf 0) i $(tput setab 0; tput setaf 7) )
+info=$( echo $(tput setab 3; tput setaf 0) i $(tput setab 0; tput setaf 7) )
 
 setpwd() {
 	echo
