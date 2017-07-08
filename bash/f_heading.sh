@@ -57,7 +57,7 @@ line2=$( linecolor = 6 )       # =         (cyan)
 line=$( linecolor - 6 )        # -         (cyan)
 linered=$( linecolor - 1 )     # -         (red)
 bar=$( textcolor '   ' 7 6 )   # [   ]     (cyan)
-info=$( textcolor ' i ' 0 6 )  # [ i ]     (black on cyan)
+info=$( textcolor ' i ' 0 3 )  # [ i ]     (black on yellow)
 warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (gray on red)
 
 title2() {
