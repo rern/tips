@@ -6,4 +6,6 @@
 
 **Escape character**  
 `\\, \", \', \$ \(, \), \[, \], \#, \*, \|`  
+
+**Quoted character**  
 `'&', '<', '>'`  
