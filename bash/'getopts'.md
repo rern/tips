@@ -12,7 +12,7 @@
 # c  - option -c no parameter (1 / 0)
 
 
-usage() { echo "Usage: $0 [-c <color>] [-b <background>] <string>" 1>&2; exit 1; }
+usage() { echo "Usage: $0 [-c <color>] [-b <background>] <string>" 1>&2; exit 1; } # quoted or unquoted <string>
 
 color=6   # default no -c option
 back=0    # default no -b option
