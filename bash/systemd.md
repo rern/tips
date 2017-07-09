@@ -76,12 +76,7 @@ BindsTo=<unit>.service     # depend - stop if unit2.service stopped
 systemctl list-unit-files
 ```
 
-**list enabled**
+**list by state** `enabled` / `disabled` / `indirect` / `static`  
 ```sh
-systemctl list-unit-files | grep enabled
-```
-
-**list running**
-```sh
-systemctl | grep running
+systemctl list-unit-files | grep <state>
 ```
