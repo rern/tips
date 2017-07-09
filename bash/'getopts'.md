@@ -25,7 +25,7 @@ while getopts ":c:b:" opt; do # leading ':' - hide errors; trailing ':' - with p
     esac
 done
 
-shift $((OPTIND-1)) # move to unlooped(not in ':c:b:') argument, '<string>'
+shift $((OPTIND-1)) # shifts out option arguments (in ':c:b:'), leaves '<string>'
 
-echo $(tput setaf "$color"; tput setab "$back")${@}$(tput setaf 7; tput setab 0) # '$@ - all arguments
+echo $(tput setaf "$color"; tput setab "$back")${@}$(tput setaf 7; tput setab 0) # '$@ - all left arguments
 ```
