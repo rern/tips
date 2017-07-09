@@ -57,9 +57,9 @@ linecolor() {
 	printf $color "${COLUMNS:-$(tput cols)}" '' | tr ' ' "$1"
 }
 textcolor() { 
-	[[ $2 ]] && fg=$2 || fg=6
-	[[ $3 ]] && bg=$3 || bg=0
-	echo $(tput setaf "$fg"; tput setab "$bg")"$1"$(tput setaf 7; tput setab 0)
+	[[ $2 ]] && back=$2 || color=6
+	[[ $3 ]] && back=$3 || color=0
+	echo $(tput setaf "$color"; tput setab "$back")"$1"$(tput setaf 7; tput setab 0)
 }
 
 line2=$( linecolor = )         # =         (cyan - default)
