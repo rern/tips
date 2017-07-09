@@ -1,7 +1,7 @@
 systemd
 ---
 
-`unit.service`  
+`unit.service` `unit2.service`  
 
 **start / stop**
 ```sh
@@ -59,10 +59,20 @@ ExecStartPost=<command4>
 systemctl list-unit-files | grep enabled
 ```
 
-**bind to another unit**
+**interact with another unit**  
+`unit.service`  
 ```sh
 [Unit]
 Description=[string]
-BindsTo=unit2.service
+Requires=unit2.service   # need
+# Wants=unit2.service    # optional
+Before=unit2.service     # start before
+...
+```
+`unit2.service`  
+```sh
+[Unit]
+Description=[string]
+BindsTo=unit.service   # stop if unit2.service stopped
 ...
 ```
