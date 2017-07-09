@@ -4,7 +4,7 @@
 
 # linecolor <character> [color]
 
-# textcolor "<string>" [color] [background]
+# textcolor '<string>' [color] [background]
 
 # title2 "<string>"
 # =============================================>> (fill width)
