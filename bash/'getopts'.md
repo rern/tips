@@ -18,8 +18,8 @@ back=0    # default no -b option
 
 while getopts ":c:b:" opt; do # leading ':' - hide errors; trailing ':' - with parameter
     case $opt in
-        c) color=${OPTARG};;
-        b) back=${OPTARG};;
+        c) color=$OPTARG;;
+        b) back=$OPTARG;;
         *) usage;;
     esac
 done
