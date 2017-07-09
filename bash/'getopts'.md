@@ -5,7 +5,6 @@
 # getopts OPTSTRING VARNAME [ARGS...]
 
 # OPTSTRING - :ab:c 
-# check for options -a, -b, -c - silences errors
 # :  - hide errors (leading ':')
 # a  - option -a no parameter (1 / 0)
 # b: - option -b with parameter (trailing ':')
