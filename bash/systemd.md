@@ -1,8 +1,6 @@
 systemd
 ---
 
-`unit.service` `unit2.service`  
-
 **start / stop**
 ```sh
 systemctl start <unit>
