@@ -2,12 +2,24 @@
 
 # heading variables and functions
 
-# usage:
+# linecolor <character> [color]
+
+# textcolor "<string>" [color] [background]
 
 # title2 "<string>"
 # =============================================>> (fill width)
 # [   ] string
 # =============================================>> (fill width)
+
+# titlebar "<string>"
+# -------------------------------------------->> (fill width)
+# [   ] string
+# -------------------------------------------->> (fill width)
+
+# titleinfo "<string>"
+# -------------------------------------------->> (fill width)
+# [ i ] string
+# -------------------------------------------->> (fill width)
 
 # title "<string>"
 # -------------------------------------------->> (fill width)
@@ -27,9 +39,6 @@
 # string
 # (red) -------------------------------------->> (fill width)
 
-# linecolor <character> [color]
-# textcolor <string> [color] [background]
-
 # 0 - black
 # 1 - red
 # 2 - green
@@ -41,22 +50,22 @@
 
 linecolor() {
 	if [[ -z $2 ]] || (( $2 > 6 )); then
-		color='%*s\n'
+		color='\e[0;36m%*s\e[m\n'
 	else
 		color='\e[0;3'$2'm%*s\e[m\n'
 	fi
 	printf $color "${COLUMNS:-$(tput cols)}" '' | tr ' ' "$1"
 }
 textcolor() { 
-	[[ $2 ]] && fg=$2 || fg=7
+	[[ $2 ]] && fg=$2 || fg=6
 	[[ $3 ]] && bg=$3 || bg=0
 	echo $(tput setaf "$fg"; tput setab "$bg")"$1"$(tput setaf 7; tput setab 0)
 }
 
-line2=$( linecolor = 6 )       # =         (cyan)
-line=$( linecolor - 6 )        # -         (cyan)
+line2=$( linecolor = )         # =         (cyan - default)
+line=$( linecolor - )          # -         (cyan - default)
 linered=$( linecolor - 1 )     # -         (red)
-bar=$( textcolor '   ' 7 6 )   # [   ]     (cyan)
+bar=$( textcolor '   ' 7 6 )   # [   ]     (gray on cyan)
 info=$( textcolor ' i ' 0 3 )  # [ i ]     (black on yellow)
 warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (gray on red)
 
