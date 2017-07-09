@@ -57,17 +57,17 @@ ExecStartPost=<command4>
 ```sh
 [Unit]
 Description=...
-Requires=<unit2>.service   # need
-# Wants=<unit2>.service    # optional
-Before=<unit2>.service     # start before
-After=<unit2>.service      # start after (succeeded or failed)
+Requires=<unit2>.service   # depend - need
+# Wants=<unit2>.service    # depend - optional
+Before=<unit2>.service     # order - start before
+After=<unit0>.service      # order - start after (succeeded or failed)
 ...
 ```
 `<unit2>.service`  
 ```sh
 [Unit]
 Description=...
-BindsTo=<unit>.service   # stop if unit2.service stopped
+BindsTo=<unit>.service     # depend - stop if unit2.service stopped
 ...
 ```
 
