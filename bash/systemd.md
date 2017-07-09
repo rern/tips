@@ -52,7 +52,7 @@ ExecStartPost=<command4>
 ...
 ```
 
-**depends and order**  
+**depends and orders**  
 `<unit>.service`  
 ```sh
 [Unit]
@@ -71,7 +71,7 @@ BindsTo=<unit>.service     # depend - stop if unit2.service stopped
 ...
 ```
 
-**list all unit**
+**list all units**
 ```sh
 systemctl list-unit-files
 ```
