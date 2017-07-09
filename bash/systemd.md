@@ -9,6 +9,12 @@ systemctl start unit
 systemctl stop unit
 ```
 
+**enable / disable**
+```sh
+systemctl enable unit
+systemctl disable unit
+```
+
 **view**
 ```sh
 systemctl cat unit
@@ -45,5 +51,18 @@ ExecStartPre=<command2>
 ExecStart=<command>      # allow only 1 command
 ExecStartPost=<command3>
 ExecStartPost=<command4>
+...
+```
+
+**list all enabled**
+```sh
+systemctl list-unit-files | grep enabled
+```
+
+**bind to another unit**
+```sh
+[Unit]
+Description=[string]
+BindsTo=unit2.service
 ...
 ```
