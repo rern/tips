@@ -71,7 +71,7 @@ systemctl | grep running
 `<unit>.service`  
 ```sh
 [Unit]
-Description=[string]
+Description=...
 Requires=<unit2>.service   # need
 # Wants=<unit2>.service    # optional
 Before=<unit2>.service     # start before
@@ -80,7 +80,7 @@ Before=<unit2>.service     # start before
 `<unit2>.service`  
 ```sh
 [Unit]
-Description=[string]
+Description=...
 BindsTo=<unit>.service   # stop if unit2.service stopped
 ...
 ```
