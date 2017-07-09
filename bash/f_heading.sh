@@ -64,16 +64,19 @@ title2() {
 	echo $line2
 	echo -e "$bar $1"
 	echo $line2
+	echo
 }
 titlebar() {
 	echo $line
 	echo -e "$bar $1"
 	echo $line
+	echo
 }
 titleinfo() {
 	echo $line
 	echo -e "$info $1"
 	echo $line
+	echo
 }
 title() {
 	echo $line
@@ -83,6 +86,7 @@ title() {
 titleend() {
 	echo -e "\n$1"
 	echo $line
+	echo
 }
 error() {
 	echo $linered
@@ -92,5 +96,6 @@ error() {
 errorend() {
 	echo -e "\n$warn $1"
 	echo $linered
+	echo
 }
 
