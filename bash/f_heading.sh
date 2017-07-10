@@ -18,9 +18,9 @@ textcolor() {
 	echo "$(tput setaf $color; tput setab $back)${1}$(tput setaf 7; tput setab 0)"
 }
 
-bar=$( textcolor ' . ' 6 6 )   # [   ]     (gray on cyan)    - double quoted to keep spaces
+bar=$( textcolor ' . ' 6 6 )   # [   ]     (white on cyan)    - double quoted to keep spaces
 info=$( textcolor ' i ' 0 3 )  # [ i ]     (black on yellow)
-warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (gray on red)
+warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (white on red)
 
 title() {
 	
@@ -62,14 +62,39 @@ title() {
 		echo '    '$bar'    $bar'   
 		echo '    '$info'    $info'   
 		echo '    '$warn'    $warn'   
-		echo 'Color code N:'
-		echo '    '$( textcolor '0 -' 7 ) 'black'
-		echo '    '$( textcolor '1 -' 1 ) 'red'
-		echo '    '$( textcolor '2 -' 2 ) 'green'
-		echo '    '$( textcolor '3 -' 3 ) 'yellow'
-		echo '    '$( textcolor '4 -' 4 ) 'blue'
-		echo '    '$( textcolor '5 -' 5 ) 'magenta'
-		echo '    '$( textcolor '6 -' 6 ) 'cyan (default)1'
-		echo '    '$( textcolor '7 -' 7 ) 'gray'
+		echo 'Color code for [color], [background], N:'
+		echo '    '$( textcolor '0 ----' 7 ) 'black'
+		echo '    '$( textcolor '1 ----' 1 ) 'red'
+		echo '    '$( textcolor '2 ----' 2 ) 'green'
+		echo '    '$( textcolor '3 ----' 3 ) 'yellow'
+		echo '    '$( textcolor '4 ----' 4 ) 'blue'
+		echo '    '$( textcolor '5 ----' 5 ) 'magenta'
+		echo '    '$( textcolor '6 ----' 6 ) 'cyan (default)1'
+		echo '    '$( textcolor '7 ----' 7 ) 'white'
 	}	
+}
+
+title2() {
+	title -l = $bar $@
+	echo
+}
+titlebar() {
+	title $bar $@
+	echo
+}
+titleinfo() {
+	title $info $@
+	echo
+}
+titleend() {
+	title -nt $@
+	echo
+}
+error() {
+	title -c 1 $warn $@
+	echo
+}
+errorend() {
+	title -nt -c 1 $warn $@
+	echo
 }
