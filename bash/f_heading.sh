@@ -75,29 +75,23 @@ title2() {
 	echo $line2
 	echo
 }
-
-title() {
-	if [[ $# > 1 ]]; then
-		local symbol=$1' ' # with a trailing space ' '
-		shift        # shift out called '$1'
-		local string=$@    # all the rest '$n'
-	else
-		local symbol=''
-		local string=$@
-	fi
-	echo $line
-	echo -e "${symbol}$string"
-	echo $line
-}
 titlebar() {
-	title "$bar" $@
+	echo $line
+	echo -e "$bar $1"
+	echo $line
 	echo
 }
 titleinfo() {
-	title "$info" $@
+	echo $line
+	echo -e "$info $1"
+	echo $line
 	echo
 }
-
+title() {
+	echo $line
+	echo -e "$1"
+	echo $line
+}
 titleend() {
 	echo -e "\n$1"
 	echo $line
@@ -113,4 +107,3 @@ errorend() {
 	echo $linered
 	echo
 }
-
