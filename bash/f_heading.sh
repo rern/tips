@@ -65,9 +65,9 @@ textcolor() {
 line2=$( linecolor = )         # =         (cyan - default)
 line=$( linecolor - )          # -         (cyan - default)
 linered=$( linecolor - 1 )     # -         (red)
-bar=$( textcolor '   ' 7 6 )   # [   ]     (gray on cyan)
-info=$( textcolor ' i ' 0 3 )  # [ i ]     (black on yellow)
-warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (gray on red)
+bar=$( textcolor '   ' 7 6 )   # [   ]     (gray on cyan)    - double quoted to keep spaces
+info=$( textcolor ' i ' 0 3 )  # [ i ]     (black on yellow) - double quoted to keep spaces
+warn=$( textcolor ' ! ' 7 1 )  # [ ! ]     (gray on red)     - double quoted to keep spaces
 
 title2() {
 	echo $line2
@@ -75,23 +75,29 @@ title2() {
 	echo $line2
 	echo
 }
+
+title() {
+	if [[ $# > 1 ]]; then
+		local symbol=$1' ' # with a trailing space ' '
+		shift        # shift out called '$1'
+		local string=$@    # all the rest '$n'
+	else
+		local symbol=''
+		local string=$@
+	fi
+	echo $line
+	echo -e "${symbol}$string"
+	echo $line
+}
 titlebar() {
-	echo $line
-	echo -e "$bar $1"
-	echo $line
+	title "$bar" $@
 	echo
 }
 titleinfo() {
-	echo $line
-	echo -e "$info $1"
-	echo $line
+	title "$info" $@
 	echo
 }
-title() {
-	echo $line
-	echo -e "$1"
-	echo $line
-}
+
 titleend() {
 	echo -e "\n$1"
 	echo $line
