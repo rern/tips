@@ -30,12 +30,12 @@ title() {
 	local nobottom=0
 	
 	usage() {
+		echo 'Draw colored' $( textcolor STRING ) 'with top-bottom lines'
 		linecolor -
 		echo "Usage:  $0 [OPTION]... STRING"
 		linecolor -
 		echo 'STRING: $( textcolor STRING [color] [background] )'
 		echo
-		echo 'Draw colored' $( textcolor STRING ) 'with top-bottom lines'
 		echo 'OPTION:'
 		echo '    -c N   N - line color'
 		echo '    -l C   C - line character'
