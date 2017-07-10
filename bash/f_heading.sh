@@ -32,9 +32,9 @@ title() {
 	usage() {
 		echo 'Draw colored' $( textcolor STRING ) 'with top-bottom lines'
 		linecolor -
-		echo "Usage:  $0 [OPTION]... STRING"
+		echo "$info      Usage:  $0 [OPTION]... STRING"
 		linecolor -
-		echo 'STRING: $( textcolor STRING [color] [background] )'
+		echo 'colored STRING:  $( textcolor STRING [color] [background] )'
 		echo
 		echo 'OPTION:'
 		echo '    -c N   N - line color'
