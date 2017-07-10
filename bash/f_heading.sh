@@ -29,6 +29,23 @@ title() {
 	local notop=0
 	local nobottom=0
 	
+	while :; do
+		case $1 in
+			-h|-\?|--help) usage; exit 1;;
+			-c) local color=$2; shift;;
+			-l) local line=$2; shift;;
+			-nt) local notop=1;; # no 'shift' for non-argument option
+			-nb) local nobottom=1;;
+			-?*) printf 'WARN: unknown option: %s\n' "$1" >&2;;
+			*) break
+		esac
+		shift
+	done
+
+	[[ $notop == 0 ]] && echo $( linecolor $line $color )
+	echo -e "${@}" # $@ > "${@}" - preserve spaces 
+	[[ $nobottom == 0 ]] && echo $( linecolor $line $color )
+
 	usage() {
 		echo 'Draw colored' $( textcolor STRING ) 'with top-bottom lines'
 		linecolor -
@@ -54,45 +71,5 @@ title() {
 		echo '    '$( textcolor '5 -' 5 ) 'magenta'
 		echo '    '$( textcolor '6 -' 6 ) 'cyan (default)1'
 		echo '    '$( textcolor '7 -' 7 ) 'gray'
-	}
-	while :; do
-		case $1 in
-			-h|-\?|--help) usage; exit 1;;
-			-c) local color=$2; shift;;
-			-l) local line=$2; shift;;
-			-nt) local notop=1;; # no 'shift' for non-argument option
-			-nb) local nobottom=1;;
-			-?*) printf 'WARN: unknown option: %s\n' "$1" >&2;;
-			*) break
-		esac
-		shift
-	done
-
-	[[ $notop == 0 ]] && echo $( linecolor $line $color )
-	echo -e "${@}" # $@ > "${@}" - preserve spaces 
-	[[ $nobottom == 0 ]] && echo $( linecolor $line $color )
-}
-
-title2() {
-	title -l = $bar $@
-}
-titlebar() {
-	title $bar $@
-	echo
-}
-titleinfo() {
-	title $info $@
-	echo
-}
-titleend() {
-	title -nt $@
-	echo
-}
-error() {
-	title -c 1 $warn $@
-	echo
-}
-errorend() {
-	title -nt -c 1 $warn $@
-	echo
+	}	
 }
