@@ -6,8 +6,8 @@
 `echo '...'` : strong quote - all literal  
 
 `echo` : blank line  
-`echo $var` : var value  
-`echo "$var"` : var value
+`echo $var` : var value - multi words  
+`echo "$var"` : var value - single word  
 `echo '$var'` : $var literal  
 `echo $var abc` : var value and string  
 `echo 'abc "def"'` : double quote 
