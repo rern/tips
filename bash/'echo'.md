@@ -2,19 +2,19 @@
 
 `# * ; ( ) < > | \ &` : reserved charaters in `echo`  
 `echo ...` : non quote - reserve characters must be escaped, `'&'` must use single quoted   
-`echo "..."` : soft quote - translate variables  
+`echo "..."` : soft quote - translate variables, no escapes required  
 `echo '...'` : strong quote - all literal  
 
 `echo` : blank line  
-`echo $var` : var only  
-`echo "$var"` : var with spaces only  
-`echo abc` : string only  
-`echo 'abc "def"'` : string with double quote  
-`echo "$var \"abc\""` : double quote inside double quote  
+`echo $var` : var value without spaces  
+`echo "$var"` : var value with spaces  
+`echo '$var'` : $var literal  
 `echo $var abc` : var and string  
-`echo ${var}abc` or `echo -e "$var \babc"`  : var next to string without space  
+`echo 'abc "def"'` : double quote literal  
+`echo "$var \"abc\""` : double quote literal inside double quote  
+`echo ${var}abc` or `echo -e "$var \babc"` : var next to string without space  
 `echo -n 'abc'` : '-n' = no new line  
-`echo -e '\nabc\n'` : '-e' = enable translate backslash  
+`echo -e '\nabc\n'` : '-e' = enable translate backslash characters  
 ```
     \a          alert (bell)  
     \b          backspace
