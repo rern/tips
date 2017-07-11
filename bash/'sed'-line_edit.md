@@ -44,7 +44,7 @@ alternative brace expansion
 `/[...]\|.../` : any characters in `[...]` or pattern `...`  
 `[^...\{...\}]$` : `[^` not `$` end with any characters in `[...` or pattern in `\{...\}`
 
-`\   ` : '\\' start lines with multiple spaces / tabs  
+`\ . . ` : '\\' start insert lines with multiple spaces / tabs  
 `\s` : space or tab  
 `\t` : tab (GNU sed only)  
 `\n` : new line  
