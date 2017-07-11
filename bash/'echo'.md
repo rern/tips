@@ -1,5 +1,9 @@
 **echo**  
 
+`echo ...` : non quote - reserve characters must be escaped `# ;`  
+`echo '...'` : strong quote - all literal  
+`echo "..."` : soft quote - translate variables  
+
 `echo` : blank line  
 `echo $var` : var only  
 `echo "$var"` : var with spaces only  
