@@ -25,7 +25,4 @@
     \xnnn       character - ASCII code in hexadecimal
 ```
 `echo abc > file`  : create new file or **replace** if file exist with 'abc' content  
-`echo abc >> file` : create new file or **append**  if file exist with 'abc' content  
-
-`var="abcde"; echo ${var/de/12} # abc12` : replace `de` with `12`  
-`var="abcde"; echo ${var%d*}    # abc` : truncate from `b` to end `*`  
+`echo abc >> file` : create new file or **append**  if file exist with 'abc' content    
