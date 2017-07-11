@@ -1,7 +1,7 @@
 **echo**  
 
-`# ;` : reserved charaters  
-`echo ...` : non quote - reserve characters must be escaped, `'&'` must be single quoted   
+`# * ; ( ) < > | \ &` : reserved charaters in `echo`  
+`echo ...` : non quote - reserve characters must be escaped, `'&'` must use single quoted   
 `echo "..."` : soft quote - translate variables  
 `echo '...'` : strong quote - all literal  
 
