@@ -1,6 +1,6 @@
 tr, ${...}
 ---
-Edit string
+Edit simple string
 ```sh
 var="abcde"
 echo ${var/de/12}
