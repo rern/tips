@@ -36,12 +36,13 @@ alternative brace expansion
 `\+` : 1 or more of preceding character  
 `*` : 0 or more of preceding character  
 
-`[...]` : any characters in `[...]`  
-`[^...]` : `[^` not any characters in `...]`  
-`[^ ]*` : `*` zero or more characters that `^` are not space  
+`/[...]/` : any characters in `[...]`  
+`/[^...]/` : `[^` not any characters in `...]`  
+`/[^ ]*/` : `*` zero or more characters that `^` are not space  
 
-`^...` `^[...]` : start with  
-`...$` `[...]$` : end with  
+`/^.../` `^[...]` : start with  
+`/...$/` `[...]$` : end with  
+`/^$/` : blank line  
 
 `/a...\|b.../` : pattern `a...` or `b...`  
 `/[...]\|.../` : any characters in `[...]` or pattern `...`  
