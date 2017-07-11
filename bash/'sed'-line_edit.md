@@ -50,13 +50,13 @@ alternative brace expansion
 `\r` : return  
 `$'...\t...\n\r'` : `$` fix `\t` `\n` `\r` character result as `t` `n` `r`  
 
-`a\ ...` : append line  
-`i\ ...` : insert(prepend) line  
+`/.../ a\ ...` : append line  
+`/.../ i\ ...` : insert(prepend) line  
 `/.../ d` : delete line  
 `/^\s*$/d` : delete blank lines  
 `n1, n2 d` : delete range of lines  
-`-n '/.../p'` : print line  
-`-n '/.../{=}'` : print line number  
+`-n '/.../p'` : get line string 
+`-n '/.../='` : gett line number  
 
 `...\` : escaped split line at line end  
 `...\\` : escaped split line within double quote  
