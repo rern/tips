@@ -2,7 +2,10 @@ Bash Tips
 ---
 
 **Terminal login load script**  
-add `file.sh` with `chomd +x` to `/etc/profile.d/`  
+add `*.sh` with `chomd +x` to `/etc/profile.d/`  
+- the sam as include (dot) command `. *.sh`
+- all functions in `*.sh` can be run as bash commands
+- all variables in `*.sh` can be called in shell
 
 **Terminal banner**  
-display banner on login from `/etc/motd`
+display banner on login from `/etc/motd`  
