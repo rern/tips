@@ -37,8 +37,7 @@ echo -e "\e[38;5;N;48;5;NmSTRING\e[0m"
 for i in {0..255}; do
 	code=$( printf %03d $i )
 	printf "\e[48;05;${i}m   \e[0m \e[38;05;${i}m$code\e[0m "
-	if (( i >= 15 )) && (( (i-15) % 6 == 0 )); then
-	printf "\n";
-	fi
+	(( i == 7 )) && echo
+	( (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )) ) && echo
 done
 ```
