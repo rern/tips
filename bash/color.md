@@ -27,13 +27,13 @@ echo -e "\e[3N;4NmSTRING\e[0m"
 # 'N' - color code
 # '\e[0m' - reset to default
 
-# foreground '38;5;N'
+# foreground '\e[38;5;Nm'
 echo -e "\e[38;5;NmSTRING\e[0m"
 
-# background '48;5;N'
+# background '\e[48;5;Nm'
 echo -e "\e[48;5;NmSTRING\e[0m"
 
-# foreground + background '38;5;N;48;5;N'
+# foreground + background '\e[38;5;Nm\e[48;5;Nm'
 echo -e "\e[38;5;Nm\e[48;5;NmSTRING\e[0m"
 ```
 ![color](https://github.com/rern/tips/blob/master/bash/color_chart.png)  
