@@ -19,7 +19,7 @@ echo -e "\e[3NmSTRING\e[0m"
 # background '\e[40..47m' - basic 8 colors
 echo -e "\e[4NmSTRING\e[0m"
 # foreground + background '\e[3N;4Nm'
-echo -e "\e[3N:4NmSTRING\e[0m"
+echo -e "\e[3N;4NmSTRING\e[0m"
 ``` 
 
 **256 colors**
@@ -34,7 +34,7 @@ echo -e "\e[38;5;NmSTRING\e[0m"
 echo -e "\e[48;5;NmSTRING\e[0m"
 
 # foreground + background '38;5;N;48;5;N'
-echo -e "\e[38;5;N;48;5;NmSTRING\e[0m"
+echo -e "\e[38;5;Nm\e[48;5;NmSTRING\e[0m"
 ```
 ![color](https://github.com/rern/tips/blob/master/bash/color_chart.png)  
 image from:[Wikipedis](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
