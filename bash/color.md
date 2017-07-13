@@ -32,7 +32,7 @@ echo -e "\\033[38;5;N;48;5;NmSTRING\\033[0m"
 ```
 ![color](https://github.com/rern/tips/blob/master/bash/color_chart.png)  
 
-**Print 256 colors**
+**Print color chart**
 ```sh
 for i in {0..255} ; do
     printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
