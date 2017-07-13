@@ -4,16 +4,22 @@ Terminal colors
 **8 colors**
 ```sh
 # 'N' - color code
-# 'setaf 7', 'setab 0' - reset to default
 
+# 'setaf 7', 'setab 0' - reset to default
 # foreground 'setaf N'
 echo "$(tput setaf N)STRING$(tput setaf 7)"
-
 # background 'setab N'
 echo "$(tput setab N)STRING$(tput setab 0)"
-
 # foreground + background 'setaf N' 'setab N'
 echo "$(tput setaf N; tput setab N)STRING$(tput setaf 7; tput setab 0)"
+
+# '\e[0m' - reset to default
+# foreground '\e[30..37m'
+echo -e "\e[3NmSTRING\e[0m"
+# background '\e[40..47m' - basic 8 colors
+echo -e "\e[4NmSTRING\e[0m"
+# foreground + background '\e[3N;4Nm'
+echo -e "\e[3N:4NmSTRING\e[0m"
 ``` 
 
 **256 colors**
