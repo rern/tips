@@ -1,7 +1,7 @@
 Terminal colors
 ---
 
-**8 colors **
+**8 colors**
 ```sh
 # 'N' - color code
 # 'setaf 7', 'setab 0' - reset to default
@@ -15,6 +15,7 @@ echo "$(tput setab N)STRING$(tput setab 0)"
 # foreground + background 'setaf N' 'setab N'
 echo "$(tput setaf N; tput setab N)STRING$(tput setaf 7; tput setab 0)"
 ```
+![color](https://github.com/rern/tips/blob/master/bash/color_table_8.png)  
 
 **256 colors**
 ```sh
