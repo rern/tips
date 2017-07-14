@@ -66,4 +66,4 @@ alternative brace expansion
 `...\` : escaped split line at line end  
 `...\\` : escaped split line within double quote  
 `$ . * [ \ ] ^` : escape characters to be forced literal  
-`s/^/$( echo -e "\e[33m" )/` : prepend ascii `escape` same line
+`s/^/$( echo -e "\e[33m" )/` : prepend ascii `escape`+`[33m` same line
