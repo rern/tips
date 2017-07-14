@@ -1,0 +1,8 @@
+**motd** login terminal message of the day  
+
+```sh
+rm /etc/motd
+# create '/etc/motd.sh' with 'echo' string and color
+chmod +x /etc/motd.sh
+echo 'bash /etc/motd.sh' >> /etc/profile
+```
