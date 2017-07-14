@@ -14,7 +14,9 @@ sed
 `0, /.../` : line range search from line 0  
 `0, /.../ {// d}` : delete only 1st line matched `...`  
 `1 i\\...` : 1st line prepend  
+`1 s/^/.../'` : 1st line prepend same line  
 `"$ a\\..."` : last line append  
+`"$ s/$/.../"` : last line append same line   
 
 `-n '/.../p'` : get line string  
 `-n '/.../='` : gett line number
@@ -63,4 +65,5 @@ alternative brace expansion
 
 `...\` : escaped split line at line end  
 `...\\` : escaped split line within double quote  
-`$ . * [ \ ] ^` : escape characters to force literal  
+`$ . * [ \ ] ^` : escape characters to be forced literal  
+`s/^/$( echo -e "\e[33m" )/` : prepend ascii `escape` same line
