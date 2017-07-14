@@ -31,3 +31,4 @@
 ```
 `echo abc > file`  : create new file or **replace** if file exist with 'abc' content  
 `echo abc >> file` : create new file or **append**  if file exist with 'abc' content    
+`echo -e '\e' >> file` : append `Esc` key to file  
