@@ -13,6 +13,10 @@ sqlite3 command line
 `.` leading dot for sqlite commands  
 `.help` help  
 `.exit` / `quit` / `Ctrl+D` exit shell  
+`.databases` list databases  
+`.open /path/file.db` open a database  
+`.tables` list tables  
+
 ```sh
 sqlite3
 # SQLite version 3.16.0 2017-01-02 11:57:58
