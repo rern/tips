@@ -10,17 +10,17 @@ complete [**commands**](https://redis.io/commands)
 `keys *` : list all keys  
 `type key` : get type of key  
 
-**type 'string'**  
+**string**  
 `set key value` : set value of key  
 `get key` : get value of key  
 
-**type 'hash'**  
+**hash**  
 `hset key name value` : set value of name in key  
 `hmset key name value name1 value1` : set values of multiple names in key  
 `hget key name` get value of name in key  
 `hgetall key` : get all name:value pairs in key  
 
-**type 'set'**  
+**set**  
 `mset key value` : set value of key  
 `mget key` : get value of key  
 
