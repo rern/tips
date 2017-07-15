@@ -5,7 +5,7 @@ echo
 `'...'` single quote only when to force everything literal
 
 **Escape character**  
-`\\, \", \', \$ \(, \), \[, \], \#, \*, \|, \;` (or within `' '`)  
+``\\, \", \', \$, \`, \(, \), \[, \], \#, \*, \|, \;`` (or within `' '`)  
 `'&', '<', '>'` (cannot use `\`)  
 
 `echo ...` : non quote - reserve characters must be escaped, `'&'` must use single quoted   
