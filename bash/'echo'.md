@@ -1,21 +1,15 @@
-**echo**  
+echo
+---
 
 `"..."` double quote should be used in general  
 `'...'` single quote only when to force everything literal
 
-**Quoting**  
-`\$string` > `$string` - per-character escaping  
-`"$string string"` > `'value of variable' string` - weak quoting  
-`'$string'` > `$string` - strong quoting  
-
 **Escape character**  
-`\\, \", \', \$ \(, \), \[, \], \#, \*, \|`  
-`'&', '<', '>'`  (cannot use `\`)
+`\\, \", \', \$ \(, \), \[, \], \#, \*, \|, \;` (or within `' '`)  
+`'&', '<', '>'` (cannot use `\`)  
 
-
-`# * ; ( ) < > | \ &` : reserved charaters in `echo`  
 `echo ...` : non quote - reserve characters must be escaped, `'&'` must use single quoted   
-`echo "..."` : soft quote - translate variables, no escapes required  
+`echo "..."` : weak quote - translate variables, no escapes required  
 `echo '...'` : strong quote - all literal  
 
 `echo` : blank line  
