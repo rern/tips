@@ -20,8 +20,8 @@ echo
 `echo 'abc "def"'` : double quote 
 `echo "$var \"abc\""` : escaped double quote inside double quote  
 `echo ${var}abc` or `echo -e "$var \babc"` : var next to string without space  
-`echo -n 'abc'` : '-n' = no new line  
-`echo -e '\nabc\n'` : '-e' = enable translate backslash characters  
+`echo -n "abc"` : '-n' = no new line  
+`echo -e "\nabc\n"` : '-e' = enable translate backslash characters  
 ```
     \a          alert (bell)  
     \b          backspace
@@ -38,4 +38,3 @@ echo
 ```
 `echo abc > file`  : create new file or **replace** if file exist with 'abc' content  
 `echo abc >> file` : create new file or **append**  if file exist with 'abc' content    
-`echo -e "\e" >> file` : append `Esc` key to file  
