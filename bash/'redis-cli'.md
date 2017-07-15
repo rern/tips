@@ -1,8 +1,8 @@
 Redis basic commads
 ---
 
-[**data types**](https://redis.io/topics/data-types)  
-[**commands**](https://redis.io/commands)  
+complete [**data types**](https://redis.io/topics/data-types)  
+complete [**commands**](https://redis.io/commands)  
 
 `redis-cli` : interractive shell  
 `redis-cli command ...` : syntax  
