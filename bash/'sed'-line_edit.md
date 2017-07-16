@@ -24,10 +24,7 @@ sed
 `n a\\...` : #n line append  
 
 `s/a.../b.../` : substitute `a...` with `b...`  
-alternative brace expansion  
-- `var="abcde"; echo ${var/de/12}` : abc12 (substitute)  
-- `var="abcde"; echo ${var%d*}` : abc (truncate)  
-
+[alternative brace expansion](https://github.com/rern/tips/blob/master/bash/string_extract_edit.md)  
 `s/a.../&b.../` : append `b...` to `a...`  
 `/^a.../ s/^/b.../` : prepend `b...` to the begining of line start with `a...`  
 `/^a.../ s/$/b.../` : append `b...` to the end of line start with `a...`  
