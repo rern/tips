@@ -1,7 +1,7 @@
 ```sh
 string='abc'
 # convert 'string' to 'array' of individual characters
-read -a array <<< echo $string | sed 's/./& /g'
+for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
 
 array=('a' 'b' 'c')
 
