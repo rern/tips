@@ -42,4 +42,11 @@ extract=${float#.*}   # 23 - '#'delete from start '*'all characters to 1st '.' m
 
 # extract space-separated words
 extract=$( awk '{print $4}' <<<'column1 column2 column3 column4' )     # column4
+
+# convert case
+string=abc
+uppercase=${$string^^}     # ABC
+
+string=ABC
+lowercase=${$string,,}     # abc
 ```
