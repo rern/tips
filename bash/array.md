@@ -4,9 +4,9 @@ string='abc'
 read -a array <<< echo $string | sed 's/./& /g'
 
 array=('a' 'b' 'c')
-echo ${#array[@]} # 3 (length)
+
 echo ${array[*]}  # a b c
-echo ${#array[@]} # 3
+echo ${#array[@]} # 3 (length)
 echo ${array[1]}  # b
 array+=('d')
 echo ${array[*]}  # a b c d
