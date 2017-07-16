@@ -4,7 +4,7 @@ String extract
 ```sh
 string='1234567890'
 
-# convert to individual characters array
+# convert 'sytring' to 'array' of individual characters
 for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
 extract=${array[1]}    # b
 
