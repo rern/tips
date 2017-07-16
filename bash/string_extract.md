@@ -3,9 +3,10 @@ String extract
 
 ```sh
 string='1234567890'
+length=${#string}      # 10
 
 # convert 'sytring' to 'array' of individual characters
-for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
+read -a array <<< echo $string | sed 's/./& /g'
 extract=${array[1]}    # b
 
 extract=${string:1:3}  # 23
