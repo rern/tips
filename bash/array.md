@@ -1,7 +1,7 @@
 ```sh
 string='abc'
 # convert 'sytring' to 'array' of individual characters
-for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
+read -a array <<< echo $string | sed 's/./& /g'
 
 array=('a' 'b' 'c')
 echo ${array[*]}  # a b c
