@@ -1,6 +1,6 @@
 ```sh
 string='abc'
-# convert 'sytring' to individual characters 'array'
+# convert 'sytring' to 'array' of individual characters
 for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
 
 array=('a' 'b' 'c')
