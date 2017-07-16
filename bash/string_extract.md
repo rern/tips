@@ -6,7 +6,7 @@ string='1234567890'
 
 # convert to individual characters array
 for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
-extract=${array[1]}     # b
+extract=${array[1]}    # b
 
 extract=${string:1:3}  # 23
 extract=${string:0:3}  # 123
