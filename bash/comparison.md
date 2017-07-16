@@ -12,7 +12,9 @@ Comparison
 
 **String**  
 `[[ $a == $b ]]` or `[[ $a = $b ]]`  
+`[[ $a == [0-9]` : equal range `0-9`  
 `[[ $a != $b ]]`  
+`[[ $a != [0-9]` : not equal range `0-9`  
 `[[ $a > $b ]]`  
 `[[ $a < $b ]]`  
 `[[ -z $a ]]` : null / zero length  
