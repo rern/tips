@@ -1,4 +1,8 @@
 ```sh
+string='abc'
+# convert 'sytring' to individual characters 'array'
+for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
+
 array=('a' 'b' 'c')
 echo ${array[*]}  # a b c
 echo ${#array[@]} # 3
