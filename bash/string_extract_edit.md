@@ -1,4 +1,4 @@
-String extract. edit
+String extract, edit
 ---
 
 ```sh
