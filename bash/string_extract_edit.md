@@ -5,8 +5,8 @@ String extract, edit
 string='1234567890'
 length=${#string}      # 10
 
-# convert 'sytring' to 'array' of individual characters
-read -a array <<< echo $string | sed 's/./& /g'
+# convert 'string' to 'array' of individual characters
+for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
 extract=${array[1]}    # b
 
 # extract
