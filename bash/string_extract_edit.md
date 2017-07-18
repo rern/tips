@@ -6,8 +6,10 @@ string='1234567890'
 length=${#string}                      # 10
 position=$( expr index "$string" '4' ) # 4
 
-# convert 'string' to 'array' of individual characters
-for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done # array=(1 2 3 4 5 6 7 8 9 0)
+# convert 'string' to 'array' of individual characters: array=(1 2 3 4 5 6 7 8 9 0)
+for (( i=0 ; i < ${#string} ; i++ )); do 
+    array[i]=${string:i:1}
+done
 extract=${array[1]}    # b
 
 # extract
