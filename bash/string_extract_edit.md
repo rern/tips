@@ -4,6 +4,7 @@ String extract, edit
 ```sh
 string='1234567890'
 length=${#string}      # 10
+position=$( expr index "$string" '4' ) # 4
 
 # convert 'string' to 'array' of individual characters
 for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
