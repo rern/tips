@@ -19,11 +19,11 @@ echo "abcdefghijklmn" | sed 's/.\{4\}/&|/g'  # abcd|efgh|ijkl|mn
 
 # extract
 array=(a b c)
-echo ${array[*]}  # a b c   (all)
-echo ${#array[@]} # 3       (length)
-echo ${array[1]}  # b       (index 1)
-array+=('d')      # array=(a b c d)
-array[2]=x        # array=(a b x d)
+all=${array[*]}     # a b c
+length=${#array[@]} # 3
+value1=${array[1]}  # b
+array+=('d')        # array=(a b c d)
+array[2]=x          # array=(a b x d)
 
 # delete all values in array
 array=()
