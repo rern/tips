@@ -10,6 +10,8 @@ done   # array=(a b c)
 
 # split 'string' to 'array' by a delimiter
 string='abc|def|ghi'
+array=(${string//|/ })   # array=(abc def ghi)
+# or
 IFS='|' read -ra array <<< "$string"   # array=(abc def ghi)
 
 # insert a character every N interval
