@@ -11,7 +11,7 @@ string='abc|def|ghi'
 IFS='|' read -ra array <<< "$string"   # array=(abc def ghi)
 
 # insert a character every N interval
-echo "abcdefghijklmn" | sed 's/.\{4\}/&|/g'         # abcd|efgh|ijkl|mn
+echo "abcdefghijklmn" | sed 's/.\{4\}/&|/g'  # abcd|efgh|ijkl|mn
 
 # extract
 array=(a b c)
