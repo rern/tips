@@ -4,7 +4,9 @@ Array
 ```sh
 # convert 'string' to 'array' of individual characters
 string='abc'
-for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done   # array=(a b c)
+for (( i=0; i < ${#string}; i++ )); do
+    array[i]=${string:i:1}
+done   # array=(a b c)
 
 # split 'string' to 'array' by a delimiter
 string='abc|def|ghi'
