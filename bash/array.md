@@ -1,7 +1,14 @@
+Array
+---
+
 ```sh
-string='abc'
 # convert 'string' to 'array' of individual characters
-for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done
+string='abc'
+for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done # array=(a b c)
+
+# split 'string' to 'array' by a delimiter
+string='abc|def|ghi'
+IFS='|' read -ra array <<< "$string" # array=(abc def ghi)
 
 array=('a' 'b' 'c')
 
