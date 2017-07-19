@@ -21,5 +21,5 @@ array[2]=2
 echo ${array[*]}  # a 2 c d
 
 # delete all values in array
-unset array       # without '$' array=()
+array=()
 ```
