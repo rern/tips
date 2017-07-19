@@ -10,8 +10,8 @@ for (( i=0 ; i < ${#string} ; i++ )); do array[i]=${string:i:1}; done # array=(a
 string='abc|def|ghi'
 IFS='|' read -ra array <<< "$string" # array=(abc def ghi)
 
-array=('a' 'b' 'c')
-
+# extract
+array=(a b c)
 echo ${array[*]}  # a b c
 echo ${#array[@]} # 3 (length)
 echo ${array[1]}  # b
@@ -21,6 +21,5 @@ array[2]=2
 echo ${array[*]}  # a 2 c d
 
 # delete all values in array
-unset array       # without '$'
-echo ${#array[@]} # (nill)
+unset array       # without '$' array=()
 ```
