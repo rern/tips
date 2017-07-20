@@ -9,10 +9,10 @@ for (( i=0; i < ${#string}; i++ )); do
 done   # array=(a b c)
 
 # split 'string' to 'array' by a delimiter
-string='abc|def|ghi'
-array=(${string//|/ })   # array=(abc def ghi)
-# or
-IFS='|' read -ra array <<< "$string"   # array=(abc def ghi)
+string='abc|def|ghi|jk lm'
+IFS='|' read -ra array <<< "$string"   # array=(abc def ghi 'jk lm')
+# or (spaces in string will make split too)
+array=(${string//|/ })   # array=(abc def ghi jk lm)
 
 # insert a character every N interval
 echo "abcdefghijklmn" | sed 's/.\{4\}/&|/g'  # abcd|efgh|ijkl|mn
