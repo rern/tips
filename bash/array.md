@@ -34,6 +34,15 @@ array[2]=xyz              # array=(a b xyz d)
 value0to1=${array[@]:0:2} # a b
 subvalue2=${array[2]:0:2} # xy
 
+# delete an element
+array=( ${array[@]:0:1} ${array[@]:$((1 + 1))} ) # array=(a xyz d)
+array=( ${array[@]/xy*/} )                       # array=(a d)
+
+# copy
+array2=("${array[@]}") # array2=(a d)
+
+
 # delete all values in array
-array=()
+array=()    # empty array
+unset array # delete array variable
 ```
