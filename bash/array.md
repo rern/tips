@@ -25,8 +25,14 @@ length=${#array[*]} # 3
 value0=$array       # a
 value0=${array[0]}  # a
 value1=${array[1]}  # b
-array+=('d')        # array=(a b c d)
-array[2]=x          # array=(a b x d)
+
+# edit
+array+=('d')              # array=(a b c d)
+array[2]=xyz              # array=(a b xyz d)
+
+# partial value
+value0to1=${array[@]:0:2} # a b
+subvalue2=${array[2]:0:2} # xy
 
 # delete all values in array
 array=()
