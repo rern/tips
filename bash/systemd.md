@@ -3,14 +3,14 @@ systemd
 
 **start / stop**
 ```sh
-systemctl start <unit>
-systemctl stop <unit>
+systemctl start <unit ...>
+systemctl stop <unit ...>
 ```
 
 **enable / disable**
 ```sh
-systemctl enable <unit>
-systemctl disable <unit>
+systemctl enable <unit ...>
+systemctl disable <unit ...>
 ```
 
 **view**
