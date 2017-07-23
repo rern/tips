@@ -1,4 +1,4 @@
-argument / variable
+variable, argument
 ---
 
 `$var` is simplified `${var}`  
