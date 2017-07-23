@@ -5,10 +5,10 @@ argument / variable
 
 `command a b c`  
 
-`$#` : number of argument = 3
-`$@` : all arguments      = a b c
-`$0` : command itself     = command
-`$1` : Nth argument       = a
+`$#` : number of argument = 3  
+`$@` : all arguments      = a b c  
+`$0` : command itself     = command  
+`$1` : Nth argument       = a  
 
 `$?` : last exit code  
 
