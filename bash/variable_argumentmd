@@ -1,11 +1,16 @@
 argument / variable
 ---
 
-`$var` is simplified `${var}`    
+`$var` is simplified `${var}`  
 
-`$@` : all arguments    
-`$1` : Nth argument    
-`$?` : last exit code    
+`command a b c`  
+
+`$#` : number of argument = 3
+`$@` : all arguments      = a b c
+`$0` : command itself     = command
+`$1` : Nth argument       = a
+
+`$?` : last exit code  
 
 `$@` `$*` : all arguments as separated words  
 `"$@"` : all arguments as each words  
