@@ -23,13 +23,13 @@ variable, argument
 
 **variable value as variable name**
 ```sh
-foo=bar
-declare $foo=bar2  # bar=bar2 : use value of $foo as new variable name
-echo $bar          # bar2 - variable with 
-
-foo=bar
-read $foo <<< bar2 # bar=bar2 : use value of $foo as new variable name
-echo $bar          # bar2
+a=b
+declare $a=c  # bar=bar2 : use value of $foo as new variable name
+echo $b       # bar2 - variable with 
+# or
+a=b
+read $a <<< c # bar=bar2 : use value of $foo as new variable name
+echo $b       # bar2
 ```
 
 **indirect variable**
