@@ -23,7 +23,7 @@ variable, argument
 **variable value as variable name**
 ```sh
 a=b
-declare $a=c  # b=c : use value of $foo as new variable name
+declare $a=c  # b=c : use value of $a as new variable name
 echo $b       # c
 ```
 
