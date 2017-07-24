@@ -21,6 +21,24 @@ variable, argument
 `"${array[@]}"` : all value as separated words  
 `"${array[*]}"` : all arguments as a single word  
 
+**variable value as variable name**
+```sh
+foo=bar
+declare $foo=bar2  # bar=bar2 : use value of $foo as new variable name
+echo $bar          # bar2 - variable with 
+
+foo=bar
+read $foo <<< bar2 # bar=bar2 : use value of $foo as new variable name
+echo $bar          # bar2
+```
+
+**indirect variable**
+```sh
+foo=bar
+bar2=foo           # !bar2=bar
+echo ${!bar2}      # bar - '!'indirect new variable = old variable
+```
+
 **previous command with arguments**
 ```sh
 trap 'previouscmd=$thiscmd; thiscmd=$BASH_COMMAND' DEBUG
