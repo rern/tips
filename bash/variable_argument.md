@@ -30,8 +30,9 @@ echo $b       # c
 **indirect variable**
 ```sh
 a=b
-c=a          # !c=b : '!'indirect new variable = old variable
-echo ${!c}   # b
+c=a
+echo $c      # a
+echo ${!c}   # b - expand ${!c} as $a
 ```
 
 **previous command with arguments**
