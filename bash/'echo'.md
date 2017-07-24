@@ -5,8 +5,9 @@ echo
 `'...'` single quote only when to force everything literal
 
 **Escape character**  
-``\\, \", \', \$, \`, \(, \), \[, \], \#, \*, \|, \;`` (or within `' '`)  
+``\\, \", \$, \`, \(, \), \[, \], \#, \*, \|, \;`` (or within `' '`)  
 `'&', '<', '>'` (cannot use `\`)  
+`'...'\''...'` escaped `\'` must be outside single quotes
 
 `echo ...` : non quote - reserve characters must be escaped, `'&'` must use single quoted   
 `echo "..."` : weak quote - translate variables, no escapes required  
