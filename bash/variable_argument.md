@@ -29,9 +29,9 @@ echo $b       # c
 
 **indirect variable**
 ```sh
-foo=bar
-bar2=foo      # !bar2=bar
-echo ${!bar2} # bar - '!'indirect new variable = old variable
+a=b
+c=a          # !c=b : '!'indirect new variable = old variable
+echo ${!c}   # b
 ```
 
 **previous command with arguments**
