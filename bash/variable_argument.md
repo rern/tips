@@ -25,10 +25,6 @@ variable, argument
 a=b
 declare $a=c  # b=c : use value of $foo as new variable name
 echo $b       # c - variable with 
-# or
-a=b
-read $a <<< c # b=c : use value of $foo as new variable name
-echo $b       # c
 ```
 
 **indirect variable**
