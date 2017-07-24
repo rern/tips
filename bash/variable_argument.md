@@ -24,19 +24,19 @@ variable, argument
 **variable value as variable name**
 ```sh
 a=b
-declare $a=c  # bar=bar2 : use value of $foo as new variable name
-echo $b       # bar2 - variable with 
+declare $a=c  # b=c : use value of $foo as new variable name
+echo $b       # c - variable with 
 # or
 a=b
-read $a <<< c # bar=bar2 : use value of $foo as new variable name
-echo $b       # bar2
+read $a <<< c # b=c : use value of $foo as new variable name
+echo $b       # c
 ```
 
 **indirect variable**
 ```sh
 foo=bar
-bar2=foo           # !bar2=bar
-echo ${!bar2}      # bar - '!'indirect new variable = old variable
+bar2=foo      # !bar2=bar
+echo ${!bar2} # bar - '!'indirect new variable = old variable
 ```
 
 **previous command with arguments**
