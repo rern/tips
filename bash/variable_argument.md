@@ -1,7 +1,8 @@
 variable, argument
 ---
 
-`$var` is simplified `${var}`  
+`$var` : simplified `${var}`  
+`var=` `var=''` : empty variable
 
 `command a b c`  
 
