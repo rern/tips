@@ -14,8 +14,7 @@ variable, argument
 
 `$?` : last exit code  
 
-`$@` `$*` : all arguments as separated words  
-`"$@"` : all arguments as each words  
+`$*` `$@` `"$@"` : all arguments as separated words   
 `"$*"` : all arguments as a single word  
 
 `"${array[@]}"` : all value as separated words  
