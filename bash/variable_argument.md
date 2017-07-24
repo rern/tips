@@ -20,3 +20,10 @@ variable, argument
 
 `"${array[@]}"` : all value as separated words  
 `"${array[*]}"` : all arguments as a single word  
+
+**previous command with arguments**
+```sh
+trap 'previouscmd=$thiscmd; thiscmd=$BASH_COMMAND' DEBUG
+command arg1 arg2
+prev=$previouscmd   # prev='command arg1 arg2'
+```
