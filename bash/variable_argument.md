@@ -9,6 +9,7 @@ variable, argument
 `$@` : all arguments      = a b c  
 `$0` : command itself     = command  
 `$1` : Nth argument       = a  
+`$_` : last argument      = c  
 
 `$?` : last exit code  
 
