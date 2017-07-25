@@ -61,6 +61,6 @@ sed
 `n1, n2 d` : delete range of lines  
 
 `...\` : escaped split line at line end  
-`...\\` : escaped split line within double quote  
-`$ . * [ \ ] ^` : escape characters to be forced literal  
-`s/^/$( echo -e "\e[33m" )/` : prepend ascii `escape`+`[33m` same line
+`...\\` : escaped split line within double quote (escaped backslash `\`)  
+`$ . * [ ] ^ \` : escape characters  
+`\x27` : escaped single quote `'` inside `'...'`  
