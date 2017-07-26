@@ -60,7 +60,7 @@ sed
 `/^\s*$/d` : delete blank lines  
 `n1, n2 d` : delete range of lines  
 
-`...\` : escaped split line at line end  
-`...\\` : escaped split line within double quote (escaped backslash `\`)  
+`...\` : escaped new line at line end within single quote  
+`...\\` : escaped new line within double quote (escaped backslash `\`)  
 `$ . * [ ] ^ \` : escape characters  
 `\x27` : escaped single quote `'` inside `'...'`  
