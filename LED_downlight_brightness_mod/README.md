@@ -14,6 +14,7 @@ Philips downlight lower brightness mod
 - open back cover (insert paper clips on both sides of each teeth before prying open)
 - remove 3.3 ohms RS1 resister (current sense resisters RS1||RS2 : 3.9||3.3 = 1.8 ohms --> 3.9 ohms)
 - assemble back
-- done
+- brightness lowered by half
+- replace RS2 with `more|less` value to `less|more` brightness
 
 ![removed](https://github.com/rern/tips/blob/master/LED_downlight_brightness_mod/removed.jpg)
