@@ -1,7 +1,7 @@
 Philips Downlight - Marcasite 59523 - 14W
 ---
 ![back](https://github.com/rern/tips/blob/master/LED_downlight_brightness_mod/back.jpg) 
-![circuit](https://github.com/rern/tips/blob/master/LED_downlight_brightness_mod/led_driver_circuit.jpg)
+![circuit](https://github.com/rern/tips/blob/master/LED_downlight_brightness_mod/circuit.jpg)
 **Measurement:**  
 - V supply = 300V  
 - V led = 80V  
