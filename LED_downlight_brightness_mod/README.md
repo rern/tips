@@ -1,5 +1,6 @@
-Philips Downlight - Marcasite 59523 - 14W
----
+Philips downlight lower brightness mod
+--- 
+
 ![back](https://github.com/rern/tips/blob/master/LED_downlight_brightness_mod/back.jpg) 
 ![circuit](https://github.com/rern/tips/blob/master/LED_downlight_brightness_mod/circuit.jpg)
 **Measurement:**  
