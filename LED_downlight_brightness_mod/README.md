@@ -9,7 +9,7 @@ I led = 200mA
 Modify to lower brightness
 - remove retention springs
 - open back cover (insert paper clips on both sides of each teeth before prying open)
-- remove 3.3 ohms RS1 resister (current sense resisters RS1||RS2 : 3.9||3.3 = 1.8 ohms --> 3.3 ohms)
+- remove 3.3 ohms RS1 resister (current sense resisters RS1||RS2 : 3.9||3.3 = 1.8 ohms --> 3.9 ohms)
 - assemble back
 - done
 
