@@ -1,6 +1,9 @@
 Shortcut - Nautilus as root
 ---
 
+### Ubuntu 17.10:  
+open Nautilus > ctl+l > admin://
+
 ```sh
 sudo apt update
 sudo apt install gksu
