@@ -33,7 +33,7 @@ DSM (Device Specific Macro) = Button for imported another device button
 		- "Key X" -> learn -> device button flashes 2 times
 		- "Key Y" -> learn -> device button flashes 2 times
 		...
-- Long-press "Setup" -> device button flashes 2 times
+- Press "Setup" -> device button flashes > Long-press "Setup" -> device button flashes 2 times
 
 ### Download from Remote
 - RMIR
