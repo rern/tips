@@ -30,7 +30,7 @@
     - `Firmware: MI-3_X.X.X.X-XXX.trx`
 - Select `SSH-hach of stock firmware (0)` > IP: 192.168.31.1
 - Verify this list (0) disappear after succeed
-- Select `Firmware (4)` > `Flash a firmware (4)`
+- Select `Firmware (4)` > `Flash a firmware (4)` (no backup partition)
 - Reboot
 - Done
 
