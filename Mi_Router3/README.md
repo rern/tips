@@ -24,7 +24,7 @@
 
 **Flash firmware**
 - Reconnect PC to Router
-- Run `./start.sh`
+- If (Q)uit > Run `./start.sh`
 - Verify in heading:
     - Toolchain: OK
     - Firmware: MI-3_X.X.X.X-XXX.trx (not NONE)
