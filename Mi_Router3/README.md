@@ -6,13 +6,13 @@
 - Extract and run in VMware Workstation Player
 
 **Pre-compile**
-- Select Xiaomi > mi3
+- Select Xiaomi (2) > mi3 (4)
 - Wait until compiling environment setup finished (>10 minutes)
 
 **Compile**
 - Select Build Toolchain (3) (>1 hours)
 - Select Firmware (4)
-    - Select Apply skins (2) > Select all (0)-(6) > (Q)uit
+    - Select Apply skins (2) > all (0)-(6) > (Q)uit
     - Select Build a firmware (3) (>20 minutes)
     - Select (Q)uit
 - Select (Q)uit or keep it running
@@ -28,9 +28,9 @@
 - Verify in heading:
     - Toolchain: OK
     - Firmware: MI-3_X.X.X.X-XXX.trx (not NONE)
-- Select SSH-hach of stock firmware (0) > Type IP: 192.168.31.1
+- Select SSH-hach of stock firmware (0) > IP: 192.168.31.1
 - Verify this list (0) disappear after succeed
-- Select Firmware (4) > Select Flash a firmware (4)
+- Select Firmware (4) > Flash a firmware (4)
 - Reboot
 - Done
 
@@ -40,5 +40,3 @@
 - IP: 192.168.1.1
 - ID: admin
 - Password: admin
-
-    
