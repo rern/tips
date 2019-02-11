@@ -1,27 +1,31 @@
-`### Mi Router 3 Custom Firmware
+### Mi Router 3 Custom Firmware
+- Prepare PC
+- Prepare Mi Router
+- Flash firmware
+- Setup Mi Router
 
-**Prepare PC**
+## Prepare PC
 - Install **VMware Workstation Player**: [www.vmware.com](www.vmware.com)
 - Download: [VMWARE-PROMETHEUS-64-UBUNTU-EN-RU.7z](https://disk.yandex.ru/d/6EpD2EpHmB82o) > extract
 - **VMware Workstation Player** > Player > File > Open... > select extracted folder > select `PROMETHEUS-64-U-EN.vmx`
 - Select `Power on` (green play icon) > `I copt it` > `No` for connect virtual device > `No` for software update
-- Wail until all downloads and environment setup finished
+- Wail until all downloads and environment setup finished (10+ minutes)
 
 **Pre-compile**
 - Type **2** `Xiaomi (2)` > **4** `mi3 (4)`
-- Wait until environment compiling finished (>10 minutes)
+- Wait until environment compiling finished (30+ minutes)
 
 **Compile**  
 
 ![1](https://github.com/rern/tips/blob/master/Mi_Router3/01.jpg)
-- Type **3** `Build Toolchain (3)` (>1 hours)
+- Type **3** `Build Toolchain (3)` (60+ minutes)
 - Type **4** `Firmware (4)`
     - Type **2** `Apply skins (2)` > **0** - **6** `(0)-(6)` > **Q** `(Q)uit`
-    - Type **3** `Build a firmware (3)` (>20 minutes)
+    - Type **3** `Build a firmware (3)` (30+ minutes)
     - Type **Q** `(Q)uit`
 - Type **Q** `(Q)uit` or keep it running
 
-**Prepare Mi Router**   
+## Prepare Mi Router   
 (For Chinese language, use thses for guessing)  
 - Download Mi's overwritable firmware: [miwifi_r3_all_55ac7_2.11.20.zip](https://www.dropbox.com/s/r09dl0or4z2iyxh/miwifi_r3_all_55ac7_2.11.20.zip?dl=1)
 - Extract and flash to the router  
@@ -34,7 +38,7 @@
 - Connect to the router through WiFi **Xiaomi_xxxxxx** > pop-up Setup page
 - Finish initial setup - remember **admin password**
 
-**Flash firmware**
+## Flash firmware
 - Set PC network adapter:
 	- Write down current settings
 	- Set IP: 192.168.31.2
@@ -51,7 +55,7 @@
 - Done
 - Restore PC network adapter settings
 
-**Setup new Mi Router**  
+## Setup Mi Router  
 Connect to the router
 - LAN or WiFi: **ASUS** password: **1234567890**
 - IP: 192.168.1.1
