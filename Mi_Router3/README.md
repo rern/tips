@@ -25,7 +25,7 @@
 ![1](https://github.com/rern/tips/blob/master/Mi_Router3/01.jpg)
 - Type **3** `Build toolchain (3)` (60+ minutes)
 - Type **4** `Firmware (4)`
-    - Type **2** `Apply skins (2)` > **0** - **6** `(0)-(6)` > **Q** `(Q)uit`
+    - Type **2** `Apply skins (2)` > **0** - **6** `(0)-(6)` for all skins > **Q** `(Q)uit`
     - Type **3** `Build a firmware (3)` (30+ minutes)
     - Type **Q** `(Q)uit`
 - Type **Q** `(Q)uit` or keep it running
