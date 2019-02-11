@@ -51,7 +51,7 @@
 	- Set subnet: 255.255.255.0
 - Reconnect PC to Router
 - If `(Q)uit` > Run `./start.sh`
-- Type **0** `SSH-hach of stock firmware (0)` > **enter** (default IP: 192.168.31.1) > type **addmin password**
+- Type **0** `SSH-hach of stock firmware (0)` > **enter** for (default - 192.168.31.1) > type **addmin password**
 - Wait until SSH-hack succeeded
 - Verify:
 	- in heading:
