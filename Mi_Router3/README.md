@@ -12,8 +12,13 @@
 - Wail until all downloads and environment setup finished (10+ minutes)
 
 **Pre-compile**
-- Type **2** `Xiaomi (2)` > **4** `mi3 (4)`
-- Wait until environment compiling finished (30+ minutes)
+![1](https://github.com/rern/tips/blob/master/Mi_Router3/1.jpg)  
+![2](https://github.com/rern/tips/blob/master/Mi_Router3/2.jpg)  
+![3](https://github.com/rern/tips/blob/master/Mi_Router3/3.jpg)  
+(Make sure NumLock is on for number keys.)
+- Type **1** `1) Padavan-ng (Linaro)` (2 rounds)
+- Wait until source cloning finished
+- Type **2** `2) Xiaomi` > **4** `4) mi-3`
 
 **Compile**  
 
