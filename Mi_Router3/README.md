@@ -9,7 +9,8 @@
 - Select `Xiaomi (2)` > `mi3 (4)`
 - Wait until compiling environment setup finished (>10 minutes)
 
-**Compile**
+**Compile**  
+
 ![1](https://github.com/rern/tips/blob/master/Mi_Router3/01.jpg)
 - Select `Build Toolchain (3)` (>1 hours)
 - Select `Firmware (4)`
@@ -19,6 +20,7 @@
 - Select `(Q)uit` or keep it running
 
 **Prepare Mi Router**
+![2](https://github.com/rern/tips/blob/master/Mi_Router3/02.jpg)
 - Download Mi's overwritable firmware: [miwifi_r3_all_55ac7_2.11.20.zip](https://www.dropbox.com/s/r09dl0or4z2iyxh/miwifi_r3_all_55ac7_2.11.20.zip?dl=1)
 - Extract and flash to the router
 - Finish initial setup
