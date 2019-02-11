@@ -54,7 +54,7 @@
 - Type **0** `SSH-hach of stock firmware (0)` > **enter** (default IP: 192.168.31.1) > type **addmin password**
 - Wait until SSH-hack succeeded
 - Verify:
-	-in heading:
+	- in heading:
     	- `Toolchain: OK`
     	- `Firmware: MI-3_X.X.X.X-XXX.trx`
 	- `SSH-hach of stock firmware (0)` disappeared
