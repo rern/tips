@@ -10,6 +10,7 @@
 - Wait until compiling environment setup finished (>10 minutes)
 
 **Compile**
+![1](https://github.com/rern/tips/blob/master/Mi_Router3/01.jpg)
 - Select `Build Toolchain (3)` (>1 hours)
 - Select `Firmware (4)`
     - Select `Apply skins (2)` > `(0)-(6)` > `(Q)uit`
