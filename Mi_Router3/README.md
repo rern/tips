@@ -1,13 +1,15 @@
-### Mi Router 3 Custom Firmware
+`### Mi Router 3 Custom Firmware
 
 **Prepare PC**
-- Install `VMware Workstation Player`: [www.vmware.com](www.vmware.com)
-- Download: [VMWARE-PROMETHEUS-64-UBUNTU-EN-RU.7z](https://disk.yandex.ru/d/6EpD2EpHmB82o)
-- Extract and run in VMware Workstation Player
+- Install **VMware Workstation Player**: [www.vmware.com](www.vmware.com)
+- Download: [VMWARE-PROMETHEUS-64-UBUNTU-EN-RU.7z](https://disk.yandex.ru/d/6EpD2EpHmB82o) > extract
+- **VMware Workstation Player** > Player > File > Open... > select extracted folder > select `PROMETHEUS-64-U-EN.vmx`
+- Select `Power on` (green play icon) > `I copt it` > `No` for connect virtual device > `No` for software update
+- Wail until all downloads and environment setup finished
 
 **Pre-compile**
 - Type **2** `Xiaomi (2)` > **4** `mi3 (4)`
-- Wait until compiling environment setup finished (>10 minutes)
+- Wait until environment compiling finished (>10 minutes)
 
 **Compile**  
 
