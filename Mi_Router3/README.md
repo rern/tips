@@ -22,7 +22,7 @@
 
 **Compile**  
 
-![1](https://github.com/rern/tips/blob/master/Mi_Router3/01.jpg)
+![4](https://github.com/rern/tips/blob/master/Mi_Router3/4.jpg)
 - Type **3** `Build toolchain (3)` (60+ minutes)
 - Type **4** `Firmware (4)`
     - Type **2** `Apply skins (2)` > **0** - **6** `(0)-(6)` for all skins > **Q** `(Q)uit`
@@ -44,6 +44,7 @@
 - Finish initial setup - remember **admin password**
 
 ## Flash firmware
+![1](https://github.com/rern/tips/blob/master/Mi_Router3/01.jpg)
 - Set PC network adapter:
 	- Write down current settings
 	- Set IP: 192.168.31.2
