@@ -11,7 +11,7 @@
 - Select `Power on` (green play icon) > `I copt it` > `No` for connect virtual device > `No` for software update
 - Wail until all downloads and environment setup finished (10+ minutes)
 
-**Pre-compile**
+**Pre-compile**  
 ![1](https://github.com/rern/tips/blob/master/Mi_Router3/1.jpg)  
 ![2](https://github.com/rern/tips/blob/master/Mi_Router3/2.jpg)  
 ![3](https://github.com/rern/tips/blob/master/Mi_Router3/3.jpg)  
@@ -23,7 +23,7 @@
 **Compile**  
 
 ![1](https://github.com/rern/tips/blob/master/Mi_Router3/01.jpg)
-- Type **3** `Build Toolchain (3)` (60+ minutes)
+- Type **3** `Build toolchain (3)` (60+ minutes)
 - Type **4** `Firmware (4)`
     - Type **2** `Apply skins (2)` > **0** - **6** `(0)-(6)` > **Q** `(Q)uit`
     - Type **3** `Build a firmware (3)` (30+ minutes)
