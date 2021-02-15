@@ -1,9 +1,5 @@
 ```sh
-# /etc/default/grub
-GRUB_DEFAULT=0    
-GRUB_HIDDEN_TIMEOUT=0
-GRUB_HIDDEN_TIMEOUT_QUIET=true
+sed -i 's/\(set timeout_style=\).*/\1hidden' /etc/grub.d/30_os-prober
 
-# 
 update-grub
 ```
