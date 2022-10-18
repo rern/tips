@@ -17,4 +17,4 @@ Windows - Share Internet From Hotspot to Router
 	- LAN > Right click > Properties > Sharing > Allow ...
 
 ### Done
-- All clients get internet connection from Hotspot via router.
+- All clients get normal and internet connection as usual.
