@@ -11,4 +11,6 @@ update-grub
 ### Snap
 - All Applications > Add/Remove Software
 - snapd - install > select all options
-- Fix errors: `systemctl restart snapd.seeded snapd snapd.socket`
+- Fixes:
+	- Path - `echo export PATH=$PATH:/var/lib/snapd/snap/bin >> /root/.bashrc`
+	- Errors - `systemctl restart snapd.seeded snapd snapd.socket`
