@@ -20,7 +20,7 @@ snap install notepad-plus-plus
 cd
 echo "\
 notepad() {
-	systemctl snapd.socket
+	systemctl start snapd.socket
 	/var/lib/snapd/snap/bin/notepad-plus-plus &> /dev/null &
 }" >> .bashrc
 ```
