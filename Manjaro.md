@@ -14,14 +14,14 @@ update-grub
 - Install:
 ```sh
 su
-systemctl start snapd.seeded snapd snapd.socket # before run snap
+systemctl enable --now snapd.socket
+systemctl start snapd.seeded snapd # before run snap
 snap install notepad-plus-plus
 
 cd
 echo "\
 notepad() {
-	systemctl start snapd.socket
 	/var/lib/snapd/snap/bin/notepad-plus-plus &> /dev/null &
 }" >> .bashrc
 ```
-- Run: `notepad`
+- Run: `notepad` or from context menu
