@@ -11,7 +11,17 @@ update-grub
 ### Notepad++
 - All Applications > Add/Remove Software
 - snapd - install > select all options
-- Run: `/var/lib/snapd/snap/bin/notepad-plus-plus`
-- Fixes:
-	- Path - `echo export PATH=$PATH:/var/lib/snapd/snap/bin >> /root/.bashrc`
-	- Errors - `systemctl restart snapd.seeded snapd snapd.socket`
+- Install:
+```sh
+su
+systemctl start snapd.seeded snapd snapd.socket # before run snap
+snap install notepad-plus-plus
+
+cd
+echo "\
+notepad() {
+	systemctl snapd.socket
+	/var/lib/snapd/snap/bin/notepad-plus-plus &> /dev/null &
+}" >> .bashrc
+```
+- Run: `notepad`
