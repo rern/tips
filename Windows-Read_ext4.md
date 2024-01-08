@@ -22,5 +22,5 @@ wsl --mount \\.\PHYSICALDRIVE3 --partition 1
 
 - Unmount
 ```sh
-wsl --unmount \\.\PHYSICALDRIVE3 --partition 1 
+wsl --unmount \\.\PHYSICALDRIVE3 
 ```
