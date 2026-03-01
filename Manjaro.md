@@ -1,3 +1,8 @@
+### Terminal Mouse Copy / Paste
+Edit > Preferences ...
+- General > Automatically copy selection to clipboard
+- Advance > Right click action: Paste clipboard
+
 ### Hide GRUB
 ```sh
 sed -i -e 's/\(set timeout_style=\).*/\1hidden/
